@@ -17,13 +17,14 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2(Random.Range(-3, 3), Random.Range(-3, 3));
         //rb.transform.rotation = Quaternion.LookRotation(rb.velocity);
         
-        screenBounds = cam.ScreenToViewportPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
+        //screenBounds = cam.ScreenToViewportPoint(new Vector3(Screen.width, Screen.height, cam.transform.position.z));
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         //Removes Enemies from game if too far away.
         if (transform.position.x < -screenBounds.x * 10)
         {
@@ -41,7 +42,9 @@ public class Enemy : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        */
 
+       
         //Changes velocity if set to zero to combat unmoving objects
         if (rb.velocity.x == 0 && rb.velocity.y == 0)
         {
