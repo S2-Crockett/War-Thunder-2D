@@ -675,6 +675,7 @@ MonoBehaviour:
   speed: 40
   bullet: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
   player: {fileID: 2016660236}
+  cam: {fileID: 2104101583}
 --- !u!212 &2016660239
 SpriteRenderer:
   m_ObjectHideFlags: 0
