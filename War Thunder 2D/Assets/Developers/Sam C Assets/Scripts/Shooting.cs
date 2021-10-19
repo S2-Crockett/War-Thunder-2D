@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     private Rigidbody2D rb;
     public GameObject bullet;
     public GameObject player;
+    public Camera cam;
 
     void Start()
     {
@@ -27,5 +28,6 @@ public class Shooting : MonoBehaviour
     {
         GameObject bullets = Instantiate(bullet);
         bullets.GetComponent<Bullet>().player = player;
+        bullets.GetComponent<Bullet>().cam = cam;
     }
 }
