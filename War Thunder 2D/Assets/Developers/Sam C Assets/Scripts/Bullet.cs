@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float speed;
 
     public GameObject player;
+    public Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +21,27 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (transform.position.x < cam.transform.position.x - 10)
+        {
+            Destroy(this.gameObject);
+            // once player is off the screen rotate back towards the player with a random offset and carry on in 
+            // that direction
+        }
+        if (transform.position.x > cam.transform.position.x + 10)
+        {
+            Destroy(this.gameObject);
+        }
+        if (transform.position.y < cam.transform.position.y - 8)
+        {
+            Destroy(this.gameObject);
+        }
+        if (transform.position.y > cam.transform.position.y + 8)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       Debug.Log("Collided"); 
-        if(collision.gameObject.tag == "Enemy")
-        {
-            Destroy(this);
-            Destroy(collision.gameObject);
-        }
-    }
+
 }
+
