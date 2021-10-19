@@ -20,7 +20,7 @@ Texture2D:
   m_MipsStripped: 0
   m_TextureFormat: 1
   m_MipCount: 1
-  m_IsReadable: 0
+  m_IsReadable: 1
   m_IsPreProcessed: 0
   m_IgnoreMasterTextureLimit: 0
   m_StreamingMipmaps: 0
@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Kenney Pixel SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1156823851
   material: {fileID: 7758269003516336931}
-  materialHashCode: 0
+  materialHashCode: 1693948459
   m_Version: 1.1.0
   m_SourceFontFileGUID: 24015a182f27efd4e98587a0c7131e46
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 24015a182f27efd4e98587a0c7131e46, type: 3}
-  m_SourceFontFile: {fileID: 0}
-  m_AtlasPopulationMode: 0
+  m_SourceFontFile: {fileID: 12800000, guid: 24015a182f27efd4e98587a0c7131e46, type: 3}
+  m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: Kenney Pixel
@@ -2489,9 +2489,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.8333333
+    - _ScaleRatioB: 0.6770833
+    - _ScaleRatioC: 0.6770833
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
