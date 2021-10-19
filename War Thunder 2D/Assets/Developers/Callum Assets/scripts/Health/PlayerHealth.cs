@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             //player dead
+            currentHealth = 3;
         }
     }
 
