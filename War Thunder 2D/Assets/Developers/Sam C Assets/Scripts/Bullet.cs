@@ -25,12 +25,11 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+       Debug.Log("Collided"); 
         if(collision.gameObject.tag == "Enemy")
         {
             Destroy(this);
             Destroy(collision.gameObject);
         }
-
     }
 }
