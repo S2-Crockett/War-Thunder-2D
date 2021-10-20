@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
     // would probably be more beneficial to move this to an event based system.
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if(Input.GetAxis("Submit") != 0)
         {
             if (EventSystem.current.currentSelectedGameObject == startButton)
             {
