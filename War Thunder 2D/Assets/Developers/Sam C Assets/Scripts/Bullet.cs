@@ -9,6 +9,8 @@ public class Bullet : MonoBehaviour
 
     public GameObject player;
     public Camera cam;
+
+    public PlayerHealth health;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +18,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = player.transform.rotation;
         transform.position = player.transform.position;
         rb.velocity = transform.up * 40;
+        health = player.GetComponent<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -41,7 +44,20 @@ public class Bullet : MonoBehaviour
         }
 
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy" && player.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Player" && player.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            health = collision.GetComponent<PlayerHealth>();
+            health.TakeDamage(1);
+        }
+    }
 
 }
 

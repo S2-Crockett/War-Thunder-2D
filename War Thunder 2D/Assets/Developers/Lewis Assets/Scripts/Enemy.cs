@@ -50,13 +50,5 @@ public class Enemy : MonoBehaviour
             rb.velocity = new Vector2(spawnDir, Random.Range(-0.5f, 0.5f)) * speed;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            print("HIT");
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-    }
+
 }

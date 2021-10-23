@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
     public Camera cam;
+    private float timer = 0;
 
     void Start()
     {
@@ -18,16 +19,43 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Joystick1Button1))
+        if (this.gameObject.tag == "Player")
         {
-            Shoot();
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            {
+                PlayerShoot();
+            }
         }
     }
 
-    private void Shoot()
+    private void PlayerShoot()
     {
         GameObject bullets = Instantiate(bullet);
         bullets.GetComponent<Bullet>().player = player;
         bullets.GetComponent<Bullet>().cam = cam;
     }
+
+    private void EnemyShoot()
+    {
+        if (timer <= 0)
+        {
+            GameObject bullets = Instantiate(bullet);
+            bullets.GetComponent<Bullet>().player = player;
+            bullets.GetComponent<Bullet>().cam = cam;
+            timer = 0.5f;
+        }
+        else
+            timer -= Time.deltaTime;
+    }
+
+
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+            if(collision.gameObject.tag == "Player")
+            {
+                EnemyShoot();
+            }
+    }
+
 }

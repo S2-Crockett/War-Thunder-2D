@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3782ee5c7491d1c41a0cf80689c1cd72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planePrefab: {fileID: 2038220995171172398, guid: 354e7f7949e52f54b917be7d92d54bf7, type: 3}
+  planePrefab: {fileID: 5089845959861007904, guid: f1fa8ae7dd5979a4ba11d69a67848561, type: 3}
   respawnTime: 2
   numPlanesSpawning: 0
   numPlanesMax: 0
@@ -556,9 +556,10 @@ GameObject:
   - component: {fileID: 2016660241}
   - component: {fileID: 2016660242}
   - component: {fileID: 2016660243}
+  - component: {fileID: 2016660244}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,6 +718,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bd5bbaa541ca9c140bbb801c94228a78, type: 3}
   - {fileID: 21300000, guid: a122631fcfd5c7c4d8640bc1cbb5523b, type: 3}
   - {fileID: 21300000, guid: c141b85c8572d2643a074423f35f6333, type: 3}
+--- !u!61 &2016660244
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016660236}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.32, y: 3.38}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.32, y: 3.38}
+  m_EdgeRadius: 0
 --- !u!1 &2104101581
 GameObject:
   m_ObjectHideFlags: 0

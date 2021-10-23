@@ -45,7 +45,6 @@ public class SpriteChange : MonoBehaviour
         AngleCheck(Rotation.NORTH_EAST, 337.5, 292.5);
 
 
-        print(rotation);
         switch (rotation)
         {
             case Rotation.NORTH:
