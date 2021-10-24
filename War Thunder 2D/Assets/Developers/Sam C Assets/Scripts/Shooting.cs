@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
     {
         if (this.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.R))
             {
                 PlayerShoot();
             }
