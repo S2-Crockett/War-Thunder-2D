@@ -5,6 +5,7 @@ using UnityEngine;
 public class deployPlanes : MonoBehaviour
 {
     public GameObject planePrefab;
+    public GameObject aircraftCarrier;
     public float cutsceneTime = 3.0f;
     private bool cutsceneFinished = false;
     public float respawnTime = 1.0f;
@@ -54,8 +55,9 @@ public class deployPlanes : MonoBehaviour
             }
             else
             {
-                yield return new WaitForSeconds(respawnTime);
+                Destroy(aircraftCarrier);
                 spawnPlane();
+                yield return new WaitForSeconds(respawnTime);
             }
             
         }
