@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.gameObject.tag == "Player")
+        if(Input.GetButtonDown("Submit"))
         {
             if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.R))
             {

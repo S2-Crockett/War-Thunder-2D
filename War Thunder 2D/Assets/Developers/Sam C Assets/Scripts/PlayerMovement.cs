@@ -22,6 +22,6 @@ public class PlayerMovement : MonoBehaviour
         if (angle != 0)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -angle), Time.deltaTime * rotSpeed);
-        }   
+        }
     }
 }

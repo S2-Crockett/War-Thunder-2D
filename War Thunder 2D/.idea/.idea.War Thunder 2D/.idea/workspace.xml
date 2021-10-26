@@ -22,58 +22,24 @@
     <list default="true" id="caf43830-f505-46bc-953e-495773d67e4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Scripts/Menu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Scripts/Menu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Textures/Untitled-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Textures/Untitled-2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Textures/WT-LOGO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/SStamp/Textures/WT-LOGO.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/callum.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/callum.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts/Health.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts/Health/HealthBar.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts/Health/HealthBar.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts/Health/PlayerHealth.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/scripts/Health/PlayerHealth.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/HealthBar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/HealthBar.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/Heart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/Heart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/Player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/Player.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/WhitePixel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/WhitePixel.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/sky_background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/sky_background.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/white pixel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/callum/sprites/white pixel.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Prefabs/Bullet.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Prefabs/Bullet.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/Bullet.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/Bullet.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/CameraMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/CameraMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/PlayerMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/PlayerMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/Shooting.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sam C Assets/Scripts/Shooting.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Enemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Enemy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Lewis Test Scene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Prefabs/Lewis Test Scene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scripts/Menu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scripts/Menu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Textures/Untitled-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Textures/Untitled-2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Textures/WT-LOGO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Textures/WT-LOGO.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +51,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scripts/Menu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -93,10 +59,14 @@
         <option value="$PROJECT_DIR$/Assets/Lewis Assets/Scripts/deployPlanes.cs" />
         <option value="$PROJECT_DIR$/Assets/Lewis Assets/Scripts/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/SStamp/Scripts/Menu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scripts/Menu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/Enemy.cs" />
       </list>
     </option>
   </component>
@@ -142,6 +112,9 @@
       <updated>1634570980323</updated>
       <workItem from="1634570989780" duration="1630000" />
       <workItem from="1634645345819" duration="5592000" />
+      <workItem from="1634721442339" duration="899000" />
+      <workItem from="1634897344634" duration="1537000" />
+      <workItem from="1635256970479" duration="10306000" />
     </task>
     <servers />
   </component>
