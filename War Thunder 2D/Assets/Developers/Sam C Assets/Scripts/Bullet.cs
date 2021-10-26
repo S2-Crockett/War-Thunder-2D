@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Bullet : MonoBehaviour
 
     public GameObject player;
     public Camera cam;
+    public ScoreScript scorescript;
 
     public PlayerHealth health;
     // Start is called before the first frame update
@@ -42,22 +44,23 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy" && player.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            scorescript.ScoreNum++;
+            scorescript.MyScoreText.text = "Score" + scorescript.ScoreNum;
         }
         if (collision.gameObject.tag == "Player" && player.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
-            health.TakeDamage(1);
+            health.TakeDamage(1);  
         }
     }
 
 }
-

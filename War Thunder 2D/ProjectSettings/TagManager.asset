@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Bullet
+  - ground
+  - Heart
+  - Ground
+  - Coin
   layers:
   - Default
   - TransparentFX

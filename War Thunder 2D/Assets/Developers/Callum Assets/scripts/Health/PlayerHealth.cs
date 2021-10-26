@@ -1,15 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public float currentHealth { get; private set; }
+    public Transform spawnpoint;
+    bool isDead = false;
+    int lives = 3;
+    public float currentHealth;
 
     private void Awake()
     {
         currentHealth = startingHealth;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Ground")
+        {
+            Respawn();
+        }
+        if (collision.tag == "Heart")
+        {
+            Debug.Log("We got a powerup");
+
+            if(currentHealth < 3)
+            {
+                currentHealth = 3;
+            }
+            else
+            {
+                currentHealth++;
+            }
+
+            Destroy(collision.gameObject);
+        }
+    }
+
+    public void Respawn()
+    {
+        this.transform.position = spawnpoint.position;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+            TakeDamage(1);
+
+        if (lives == 0)
+        {
+            Die();
+        }
+
+        if(isDead == true)
+        {
+            SceneManager.LoadScene("MenuScene");
+        }
     }
 
     public void TakeDamage(float _damage)
@@ -22,14 +70,14 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            //player dead
             currentHealth = 3;
+            lives--;
+            Respawn();
         }
     }
 
-    private void Update()
+    public void Die()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
+        isDead = true;
     }
 }
