@@ -5,13 +5,16 @@ using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
-    [System.NonSerialized] public EnemySpawner spawner;
+    [System.NonSerialized] 
+    public EnemySpawner spawner;
+    [System.NonSerialized] 
     public Camera cam;
+    [System.NonSerialized] 
     public Vector2 initialVelocity;
 
     private Rigidbody2D rb;
     private Vector3 screenBounds;
-    private float speed = 6f;
+    private float speed = 8f;
     private float enemyRange = 10f;
 
     // Start is called before the first frame update

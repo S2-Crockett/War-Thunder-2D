@@ -13,6 +13,9 @@
                 <e p="HealthBar.cs" t="Include" />
                 <e p="PlayerHealth.cs" t="Include" />
               </e>
+              <e p="landcollision.cs" t="Include" />
+              <e p="ScoreScript.cs" t="Include" />
+              <e p="tryagain.cs" t="Include" />
             </e>
           </e>
           <e p="Lewis Assets" t="Include">
@@ -27,6 +30,7 @@
               <e p="CameraMovement.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
               <e p="Shooting.cs" t="Include" />
+              <e p="SpriteChange.cs" t="Include" />
             </e>
           </e>
         </e>

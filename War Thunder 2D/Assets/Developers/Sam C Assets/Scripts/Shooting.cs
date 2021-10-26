@@ -21,10 +21,7 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetButtonDown("Submit"))
         {
-            if (Input.GetKeyDown(KeyCode.Joystick1Button1) || Input.GetKeyDown(KeyCode.R))
-            {
-                PlayerShoot();
-            }
+            PlayerShoot();
         }
     }
 

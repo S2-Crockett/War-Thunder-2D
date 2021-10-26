@@ -200,16 +200,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 45307852}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3782ee5c7491d1c41a0cf80689c1cd72, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ae4c6c11e8e7f644a380fb6bf0efbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planePrefab: {fileID: 5089845959861007904, guid: f1fa8ae7dd5979a4ba11d69a67848561, type: 3}
-  aircraftCarrier: {fileID: 13067012}
-  cutsceneTime: 5
-  respawnTime: 2
-  numPlanesSpawning: 0
-  numPlanesMax: 0
-  player: {fileID: 0}
+  enemyPlane: {fileID: 2038220995171172398, guid: 354e7f7949e52f54b917be7d92d54bf7, type: 3}
+  numPlanesSpawning: 5
+  numPlanesMax: 10
+  respawningDelay: 1
+  enemySpawnOffset: 9
 --- !u!4 &45307854
 Transform:
   m_ObjectHideFlags: 0
@@ -317,8 +315,6 @@ RectTransform:
   m_Children:
   - {fileID: 1975014904}
   - {fileID: 147842155}
-  - {fileID: 37666596}
-  - {fileID: 668695296}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

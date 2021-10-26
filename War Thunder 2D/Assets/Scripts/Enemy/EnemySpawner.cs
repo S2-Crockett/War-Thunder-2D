@@ -76,7 +76,6 @@ public class EnemySpawner : MonoBehaviour
         // choose a random location , based off of the players height and spawn them
         int index = Random.Range(0, spawnPositions.Length);
         plane.transform.position = spawnPositions[index];
-        print(index);
 
         if (index == 0)
         {
