@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public Transform spawnpoint;
     bool isDead = false;
     int lives = 3;
-    public float currentHealth { get; private set; }
+    public float currentHealth;
 
     private void Awake()
     {
@@ -18,10 +18,24 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "ground")
+        if (collision.tag == "Ground")
         {
             Respawn();
-            lives--;
+        }
+        if (collision.tag == "Heart")
+        {
+            Debug.Log("We got a powerup");
+
+            if(currentHealth < 3)
+            {
+                currentHealth = 3;
+            }
+            else
+            {
+                currentHealth++;
+            }
+
+            Destroy(collision.gameObject);
         }
     }
 

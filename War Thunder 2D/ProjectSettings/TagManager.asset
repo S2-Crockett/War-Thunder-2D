@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - ground
   - Heart
+  - Ground
+  - Coin
   layers:
   - Default
   - TransparentFX

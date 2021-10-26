@@ -24,4 +24,14 @@ public class ScoreScript : MonoBehaviour
             MyScoreText.text = "Score : " + ScoreNum;
         }       
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Coin")
+        {
+            ScoreNum++;
+            Debug.Log("We got a Coin");
+            Destroy(collision.gameObject);
+        }
+    }
+
 }
