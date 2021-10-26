@@ -18,16 +18,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         rb.velocity = transform.up * speed;
         float angle = Mathf.Atan2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Mathf.Rad2Deg;
-        float rotation;
-
         if (angle != 0)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -angle), Time.deltaTime * rotSpeed);
         }
-
-        
     }
 }

@@ -32,12 +32,10 @@ public class deployPlanes : MonoBehaviour
     {
         GameObject plane = Instantiate(planePrefab) as GameObject;
         plane.GetComponent<Enemy>().cam = cam;
-        plane.GetComponent<Enemy>().spawnDir = 1;
         plane.transform.position = leftSpawnPos;
         
         GameObject plane2 = Instantiate(planePrefab) as GameObject;
         plane2.GetComponent<Enemy>().cam = cam;
-        plane2.GetComponent<Enemy>().spawnDir = -1;
         plane2.transform.position = rightSpawnPos;
 
     }
