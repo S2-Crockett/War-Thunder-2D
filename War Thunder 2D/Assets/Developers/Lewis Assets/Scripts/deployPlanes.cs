@@ -5,6 +5,9 @@ using UnityEngine;
 public class deployPlanes : MonoBehaviour
 {
     public GameObject planePrefab;
+    public GameObject aircraftCarrier;
+    public float cutsceneTime = 3.0f;
+    private bool cutsceneFinished = false;
     public float respawnTime = 1.0f;
     private Vector3 screenBounds;
     private Camera cam;
@@ -45,8 +48,18 @@ public class deployPlanes : MonoBehaviour
     {
         while (true) // Can be changed once main menu is created so we know when to start the game.
         {
-            yield return new WaitForSeconds(respawnTime);
-            spawnPlane();
+            if(cutsceneFinished == false)
+            {
+                yield return new WaitForSeconds(cutsceneTime);
+                cutsceneFinished = true;
+            }
+            else
+            {
+                Destroy(aircraftCarrier);
+                spawnPlane();
+                yield return new WaitForSeconds(respawnTime);
+            }
+            
         }
     }
     
