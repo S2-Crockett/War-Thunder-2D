@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
     public Camera cam;
-    private float timer = 0;
+    private float timer = 1;
 
     void Start()
     {
@@ -37,25 +37,23 @@ public class Shooting : MonoBehaviour
 
     private void EnemyShoot()
     {
-        if (timer <= 0)
-        {
             GameObject bullets = Instantiate(bullet);
             bullets.GetComponent<Bullet>().player = player;
             bullets.GetComponent<Bullet>().cam = cam;
-            timer = 0.5f;
-        }
-        else
-            timer -= Time.deltaTime;
     }
-
-
 
     private void OnTriggerStay2D(Collider2D collision)
     {
             if(collision.gameObject.tag == "Player")
             {
+            if (timer <= 0)
+            {
+                timer = 2.0f;
                 EnemyShoot();
             }
+            else
+                timer -= Time.deltaTime;
+        }
     }
 
 }

@@ -46,20 +46,13 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            TakeDamage(1);
-
         if (lives == 0)
         {
             Die();
         }
 
-        if(isDead == true)
-        {
-            SceneManager.LoadScene("MenuScene");
-        }
+ 
     }
-
     public void TakeDamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
@@ -78,6 +71,6 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
-        isDead = true;
+        SceneManager.LoadScene("MenuScene");
     }
 }

@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         transform.rotation = player.transform.rotation;
         transform.position = player.transform.position;
-        rb.velocity = transform.up * 40;
+        rb.velocity = transform.up * 20;
         health = player.GetComponent<PlayerHealth>();
     }
 
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
-            health.TakeDamage(1);  
+            health.TakeDamage(0.5f);  
         }
     }
 
