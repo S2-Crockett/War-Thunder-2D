@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
+
+    public EnemySpawner spawner;
+
     private Rigidbody2D rb;
     public float speed;
 
@@ -21,6 +24,8 @@ public class Bullet : MonoBehaviour
         transform.position = player.transform.position;
         rb.velocity = transform.up * 20;
         health = player.GetComponent<PlayerHealth>();
+
+        spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -52,8 +57,9 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            scorescript.ScoreNum++;
-            scorescript.MyScoreText.text = "Score" + scorescript.ScoreNum;
+            spawner.EnemyDestroyed();
+            //scorescript.ScoreNum++;
+            //scorescript.MyScoreText.text = "Score" + scorescript.ScoreNum;
         }
         if (collision.gameObject.tag == "Player" && player.gameObject.tag == "Enemy")
         {

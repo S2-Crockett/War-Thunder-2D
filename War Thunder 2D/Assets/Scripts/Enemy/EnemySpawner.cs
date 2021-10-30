@@ -35,6 +35,8 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         // updates spawn positions to keep inline with the cameras
         float camX = cam.transform.position.x;
         float camY = cam.transform.position.y;

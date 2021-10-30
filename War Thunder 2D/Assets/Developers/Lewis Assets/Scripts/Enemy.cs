@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector3 screenBounds;
-    private float speed = 8f;
+    private float speed = 3f;
     private float enemyRange = 10f;
 
     // Start is called before the first frame update
@@ -30,15 +30,6 @@ public class Enemy : MonoBehaviour
         spawningDirection();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            Destroy(collision.gameObject);
-            spawner.EnemyDestroyed();
-            Destroy(gameObject);
-        }
-    }
 
     private void checkDirection()
     {
@@ -97,7 +88,7 @@ public class Enemy : MonoBehaviour
     {
         if (direction != Vector2.zero)
         {
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
