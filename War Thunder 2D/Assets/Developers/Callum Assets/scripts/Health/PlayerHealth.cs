@@ -16,29 +16,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Ground")
-        {
-            Respawn();
-        }
-        if (collision.tag == "Heart")
-        {
-            Debug.Log("We got a powerup");
-
-            if(currentHealth < 3.3f)
-            {
-                currentHealth = 3.3f;
-            }
-            else
-            {
-                currentHealth++;
-            }
-
-            Destroy(collision.gameObject);
-        }
-    }
-
+    
     public void Respawn()
     {
         this.transform.position = spawnpoint.position;
@@ -50,8 +28,6 @@ public class PlayerHealth : MonoBehaviour
         {
             Die();
         }
-
- 
     }
     public void TakeDamage(float _damage)
     {

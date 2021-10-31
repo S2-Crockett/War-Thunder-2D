@@ -21,23 +21,5 @@ public class ScoreScript : MonoBehaviour
     {
             
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Coin")
-        {
-            if (ScoreNum < 1000)
-            {
-                ScoreNum += 500;
-                MyScoreText.text = "000" + ScoreNum;
-            }
-            else if (ScoreNum >= 1000)
-            {
-                ScoreNum += 500;
-                MyScoreText.text = "00" + ScoreNum;
-            }
-            Debug.Log("Got a Coin");
-            Destroy(collision.gameObject);
-        }
-    }
-
+    
 }

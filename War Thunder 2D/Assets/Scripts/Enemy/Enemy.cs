@@ -5,6 +5,19 @@ using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Settings")]
+    public float speed = 6.5f;
+    public float enemyRange = 15f;
+
+    [Header("Behaviour")] 
+    public float viewDistance = 4.3f;
+    public float chaseTimeMin;
+    public float chaseTimeMax;
+    public float shootDelay = 0.5f;
+
+    [Header("Extras")]
+    public GameObject bullets;
+    
     [System.NonSerialized] 
     public EnemySpawner spawner;
     [System.NonSerialized] 
@@ -14,13 +27,12 @@ public class Enemy : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector3 screenBounds;
-    private float speed = 6f;
-    private float enemyRange = 15f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        int layM = 1 << 11;
     }
 
     // Update is called once per frame
@@ -28,9 +40,9 @@ public class Enemy : MonoBehaviour
     {
         checkDirection();
         spawningDirection();
+        checkForPlayer();
     }
-
-
+    
     private void checkDirection()
     {
         float camX = cam.transform.position.x;
@@ -92,6 +104,7 @@ public class Enemy : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             
             //lerp from old movement rotation to the new one
+            // NEED A SMOOTHER TRANSITION / ROTATION TO SLOWLY ROTATE
         }
     }
 
@@ -104,7 +117,45 @@ public class Enemy : MonoBehaviour
         
         // tweak the inside unit circle variable to produce more realistic results,
         // need to slow our plane down as well and maybe speed up enemies?
-        Vector2 direction = (camPos + Random.insideUnitCircle * 8 - enemyPos).normalized * speed;
+        Vector2 direction = (camPos + Random.insideUnitCircle * 3 - enemyPos).normalized * speed;
         rb.velocity = direction;
     }
+
+    private void checkForPlayer()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), viewDistance, 11);
+        if (hit.collider != null && hit.collider.tag == "Player")
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * viewDistance, Color.yellow);
+            Debug.Log("Did Hit");
+            shoot();
+        }
+        else
+        {
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * viewDistance, Color.white);
+        }
+    }
+
+    private void chasePlayer()
+    {
+        
+    }
+
+    private void shoot()
+    {
+      
+            if (shootDelay <= 0)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullets.GetComponent<Bullet>().player = this.gameObject;
+                bullets.GetComponent<Bullet>().cam = cam;
+                shootDelay = 0.5f;
+            }
+            else
+            {
+                shootDelay -= Time.deltaTime;
+            }
+    }
+    
+      
 }

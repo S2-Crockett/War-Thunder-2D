@@ -8,8 +8,10 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPlane;
     public int numPlanesSpawning;
     public int numPlanesMax;
+    public int numWaves;
     public float respawningDelay;
     public int enemySpawnOffset = 25;
+    public ScoreScript scorescript;
 
 
     // private variables
@@ -25,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     private bool gameStarted = false;
     private int planesDestroyed = 0;
     private int planesSpawned = 0;
+    private int currentWave = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -103,8 +106,8 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
-        Debug.Log("Enemy destroyed!");
         
+        // Score script
         if (scorescript.ScoreNum > 1000)
         {
             scorescript.ScoreNum += 100;
@@ -115,6 +118,7 @@ public class EnemySpawner : MonoBehaviour
             scorescript.ScoreNum += 100;
             scorescript.MyScoreText.text = "00" + scorescript.ScoreNum;
         }
+        
 
         if (planesDestroyed < numPlanesMax)
         {
@@ -122,9 +126,15 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            //the game is complete all of the enemies have been defeated
-            gameStarted = false;
-            // could spawn a boss or something?
+            if (currentWave != numWaves)
+            {
+                planesDestroyed = 0;
+                currentWave++;
+            }
+            else
+            {
+                // GO TO NEXT LEVEL
+            }
         }
     }
 }

@@ -45,6 +45,10 @@
           <e p="Game" t="Include">
             <e p="PlayCutscene.cs" t="Include" />
           </e>
+          <e p="Powerups" t="Include">
+            <e p="CoinPowerup.cs" t="Include" />
+            <e p="HealthPowerup.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
             <e p="Menu.cs" t="Include" />
           </e>

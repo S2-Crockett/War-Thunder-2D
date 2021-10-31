@@ -19,11 +19,15 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        transform.rotation = player.transform.rotation;
-        transform.position = player.transform.position;
-        rb.velocity = transform.up * 20;
-        health = player.GetComponent<PlayerHealth>();
 
+        if (player != null)
+        {
+            transform.rotation = player.transform.rotation;
+            transform.position = player.transform.position;
+            health = player.GetComponent<PlayerHealth>();
+        }
+
+        rb.velocity = transform.up * 20;
         spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
     }
 

@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
 
 public class TileGenerator : MonoBehaviour
 {
+    public GameObject player;
     public Transform playerTransform;
     public GameObject baseTile;
 
@@ -82,6 +84,8 @@ public class TileGenerator : MonoBehaviour
                         GameObject tile = Instantiate(baseTile, tileSpawn, new Quaternion(0f, 0f, 0f, 0f));
                         tile.GetComponentInChildren<BackgroundTile>().tilePosition = tileSpawn;
                         tile.GetComponentInChildren<BackgroundTile>().generator = this;
+                        tile.GetComponentInChildren<BackgroundTile>().player = player;
+                        tile.transform.SetParent(transform);
                         tiles.Add(tile);
                     }
                 }

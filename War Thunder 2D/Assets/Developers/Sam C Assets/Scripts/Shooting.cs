@@ -31,26 +31,4 @@ public class Shooting : MonoBehaviour
         bullets.GetComponent<Bullet>().player = player;
         bullets.GetComponent<Bullet>().cam = cam;
     }
-
-    private void EnemyShoot()
-    {
-            GameObject bullets = Instantiate(bullet);
-            bullets.GetComponent<Bullet>().player = player;
-            bullets.GetComponent<Bullet>().cam = cam;
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-            if(collision.gameObject.tag == "Player")
-            {
-            if (timer <= 0)
-            {
-                timer = 0.5f;
-                EnemyShoot();
-            }
-            else
-                timer -= Time.deltaTime;
-        }
-    }
-
 }
