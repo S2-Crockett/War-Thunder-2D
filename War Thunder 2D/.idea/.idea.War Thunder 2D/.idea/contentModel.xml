@@ -37,6 +37,7 @@
           <e p="Background" t="Include">
             <e p="BackgroundGenerator.cs" t="Include" />
             <e p="BackgroundTile.cs" t="Include" />
+            <e p="TileGenerator.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />

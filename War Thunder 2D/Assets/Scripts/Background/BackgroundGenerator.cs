@@ -8,7 +8,6 @@ public class BackgroundGenerator : MonoBehaviour
 {
     public Transform playerTransform;
     public GameObject baseTile;
-    public TileType[] tileTypes;
     public int WorldSizeInTiles = 0;
     public int WorldViewDistance = 1;
     
@@ -124,9 +123,3 @@ public class BackgroundGenerator : MonoBehaviour
     }
 }
 
-public class TileType
-{
-    public string tileName;
-    public int layer;
-    public Sprite sprite;
-}

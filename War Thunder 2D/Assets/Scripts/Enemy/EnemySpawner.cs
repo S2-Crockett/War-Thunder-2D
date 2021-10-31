@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public int numPlanesSpawning;
     public int numPlanesMax;
     public float respawningDelay;
-    public int enemySpawnOffset = 13;
+    public int enemySpawnOffset = 25;
 
     // private variables
     private Vector2[] spawnPositions = new[]
@@ -39,10 +39,10 @@ public class EnemySpawner : MonoBehaviour
         float camX = cam.transform.position.x;
         float camY = cam.transform.position.y;
 
-        spawnPositions[0] = new Vector3(camX - enemySpawnOffset, camY); // update left position
-        spawnPositions[1] = new Vector3(camX, camY + enemySpawnOffset); // update top position
-        spawnPositions[2] = new Vector3(camX + enemySpawnOffset, camY); // update right position
-        spawnPositions[3] = new Vector3(camX, camY - enemySpawnOffset); // update bottom position
+        spawnPositions[0] = new Vector3(camX - enemySpawnOffset, camY, 9); // update left position
+        spawnPositions[1] = new Vector3(camX, camY + enemySpawnOffset, 9); // update top position
+        spawnPositions[2] = new Vector3(camX + enemySpawnOffset, camY, 9); // update right position
+        spawnPositions[3] = new Vector3(camX, camY - enemySpawnOffset, 9); // update bottom position
     }
 
     IEnumerator StartSpawning()
@@ -71,7 +71,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject plane = Instantiate(enemyPlane) as GameObject;
         plane.GetComponent<Enemy>().cam = cam;
         plane.GetComponent<Enemy>().spawner = this;
-        
+
         // choose a random location , based off of the players height and spawn them
         int index = Random.Range(0, spawnPositions.Length);
         plane.transform.position = spawnPositions[index];
