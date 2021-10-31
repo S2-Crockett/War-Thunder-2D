@@ -10,7 +10,6 @@ public class Bullet : MonoBehaviour
 
     public GameObject player;
     public Camera cam;
-    public ScoreScript scorescript;
 
     public PlayerHealth health;
     // Start is called before the first frame update
@@ -51,9 +50,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" && player.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
-            scorescript.ScoreNum++;
-            scorescript.MyScoreText.text = "Score" + scorescript.ScoreNum;
+            Destroy(gameObject);           
         }
         if (collision.gameObject.tag == "Player" && player.gameObject.tag == "Enemy")
         {

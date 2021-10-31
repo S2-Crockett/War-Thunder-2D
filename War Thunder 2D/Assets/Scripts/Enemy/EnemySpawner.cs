@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     public int numPlanesMax;
     public float respawningDelay;
     public int enemySpawnOffset = 9;
+    public ScoreScript scorescript;
+
 
     // private variables
     private Vector2[] spawnPositions = new[]
@@ -103,6 +105,19 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
+        Debug.Log("Enemy destroyed!");
+        
+        if (scorescript.ScoreNum > 1000)
+        {
+            scorescript.ScoreNum += 100;
+            scorescript.MyScoreText.text = "000" + scorescript.ScoreNum;
+        }
+        else if (scorescript.ScoreNum <= 1000)
+        {
+            scorescript.ScoreNum += 100;
+            scorescript.MyScoreText.text = "00" + scorescript.ScoreNum;
+        }
+
         if (planesDestroyed < numPlanesMax)
         {
             planesSpawned--;

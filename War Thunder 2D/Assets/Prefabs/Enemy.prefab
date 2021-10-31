@@ -151,8 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f5f179736ccb44d93f2daa48a870f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  initialVelocity: {x: 0, y: 0}
+  scorescript: {fileID: 0}
 --- !u!61 &560118315295308455
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -26,9 +26,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("We got a powerup");
 
-            if(currentHealth < 3)
+            if(currentHealth < 3.3f)
             {
-                currentHealth = 3;
+                currentHealth = 3.3f;
             }
             else
             {
@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            currentHealth = 3;
+            currentHealth = 3.3f;
             lives--;
             Respawn();
         }

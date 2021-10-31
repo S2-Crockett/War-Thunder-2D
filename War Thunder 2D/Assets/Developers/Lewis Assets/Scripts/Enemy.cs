@@ -33,8 +33,9 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
-        {
-            Destroy(collision.gameObject);
+        {          
+            Debug.Log("Enemy destroyed!");
+            Destroy(collision.gameObject);           
             spawner.EnemyDestroyed();
             Destroy(gameObject);
         }
