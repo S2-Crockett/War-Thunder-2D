@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public int numPlanesSpawning;
     public int numPlanesMax;
     public float respawningDelay;
-    public int enemySpawnOffset = 9;
+    public int enemySpawnOffset = 13;
 
     // private variables
     private Vector2[] spawnPositions = new[]
@@ -35,8 +35,6 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         // updates spawn positions to keep inline with the cameras
         float camX = cam.transform.position.x;
         float camY = cam.transform.position.y;
@@ -73,8 +71,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject plane = Instantiate(enemyPlane) as GameObject;
         plane.GetComponent<Enemy>().cam = cam;
         plane.GetComponent<Enemy>().spawner = this;
-
-
+        
         // choose a random location , based off of the players height and spawn them
         int index = Random.Range(0, spawnPositions.Length);
         plane.transform.position = spawnPositions[index];

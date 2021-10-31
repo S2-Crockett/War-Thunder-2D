@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 screenBounds;
     private float speed = 3f;
-    private float enemyRange = 10f;
+    private float enemyRange = 15f;
 
     // Start is called before the first frame update
     void Start()
@@ -90,6 +90,8 @@ public class Enemy : MonoBehaviour
         {
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            
+            //lerp from old movement rotation to the new one
         }
     }
 
@@ -97,6 +99,8 @@ public class Enemy : MonoBehaviour
     {
         Vector2 camPos = new Vector2(cam.transform.position.x, cam.transform.position.y);
         Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
+        
+        //lerp from current movoement direction to new movement direction
         
         // tweak the inside unit circle variable to produce more realistic results,
         // need to slow our plane down as well and maybe speed up enemies?
