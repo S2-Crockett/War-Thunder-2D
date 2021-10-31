@@ -22,11 +22,6 @@ public class BackgroundTile : MonoBehaviour
         getTileType();
     }
     
-    private void Awake()
-    {
-        
-    }
-
     void getTileType()
     {
         if (tilePosition.y < 0)
