@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
     public Transform spawnpoint;
-    public PlayableDirector animation;
+    public PlayableDirector anim;
     int lives = 3;
     public float currentHealth;
 
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public void Respawn()
     {
         this.transform.position = spawnpoint.position;
-        animation.Play();
+        anim.Play();
     }
 
     private void Update()
@@ -33,7 +33,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        if (animation.state != PlayState.Playing)
+        if (anim.state != PlayState.Playing)
         {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
             if (currentHealth > 0)
