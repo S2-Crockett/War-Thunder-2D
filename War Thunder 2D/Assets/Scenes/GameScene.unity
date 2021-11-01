@@ -203,9 +203,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae4c6c11e8e7f644a380fb6bf0efbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPlane: {fileID: 2038220995171172398, guid: 354e7f7949e52f54b917be7d92d54bf7, type: 3}
+  enemyPlane: {fileID: 2038220995171172398, guid: 2d575bc39908cb04989c769fbe90f0db, type: 3}
   numPlanesSpawning: 5
   numPlanesMax: 10
+  numWaves: 0
   respawningDelay: 1
   enemySpawnOffset: 9
   scorescript: {fileID: 2016660246}
@@ -1396,6 +1397,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.96, y: 0.96}
   m_EdgeRadius: 0
+--- !u!320 &633049574 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 9031411706537961121, guid: 6bd08f09b0d3f514ea31077f65556c25, type: 3}
+  m_PrefabInstance: {fileID: 9031411707046165673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &865838254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9202910399227734046, guid: 0337ea8f6e850cc4bb53ed7ab6ce75a1, type: 3}
@@ -1689,7 +1695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877783788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.841643, y: 2.3309476, z: 427.4967}
+  m_LocalPosition: {x: -24.44, y: -2.95, z: 427.4967}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1827217140}
@@ -2294,7 +2300,7 @@ GameObject:
   - component: {fileID: 2016660243}
   - component: {fileID: 2016660244}
   - component: {fileID: 2016660246}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2431,8 +2437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb04a10c2d0b184f815b8253a0b535b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 4.4
+  startingHealth: 3
   spawnpoint: {fileID: 1877783789}
+  animation: {fileID: 633049574}
   currentHealth: 0
 --- !u!114 &2016660243
 MonoBehaviour:

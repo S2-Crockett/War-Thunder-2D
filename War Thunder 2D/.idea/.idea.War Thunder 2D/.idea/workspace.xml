@@ -21,19 +21,16 @@
   <component name="ChangeListManager">
     <list default="true" id="caf43830-f505-46bc-953e-495773d67e4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scenes/EnemyTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scenes/EnemyTestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,33 +42,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Lewis Assets/Scripts/deployPlanes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Lewis Assets/Scripts/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/SStamp/Scripts/Menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam S Assets/Scripts/Menu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/EnemySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
+      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1.cs" />
+      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1zgY0t7ww5A6nOI6MdWgAApDNfM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -82,6 +65,7 @@
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -91,7 +75,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -100,7 +84,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -123,6 +107,7 @@
       <workItem from="1635605135304" duration="1141000" />
       <workItem from="1635606307680" duration="9344000" />
       <workItem from="1635684829760" duration="24843000" />
+      <workItem from="1635714188796" duration="12762000" />
     </task>
     <servers />
   </component>

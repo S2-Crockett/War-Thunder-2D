@@ -9,7 +9,6 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
     public Camera cam;
-    private float timer = 1;
 
     void Start()
     {
@@ -28,6 +27,7 @@ public class Shooting : MonoBehaviour
     private void PlayerShoot()
     {
         GameObject bullets = Instantiate(bullet);
+        bullets.GetComponent<Bullet>().offset = 0;
         bullets.GetComponent<Bullet>().player = player;
         bullets.GetComponent<Bullet>().cam = cam;
     }

@@ -93,11 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2038220995171172397}
   - component: {fileID: 2038220995171172396}
-  - component: {fileID: 2038220995171172399}
   - component: {fileID: 560118315295308455}
+  - component: {fileID: 7098082051979091173}
   m_Layer: 2
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: Enemy Bomber
+  m_TagString: EnemyBomber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,23 +139,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2038220995171172399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038220995171172398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f5f179736ccb44d93f2daa48a870f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
-  enemyRange: 15
-  viewDistance: 30
-  shootDelay: 0.05
-  bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
 --- !u!61 &560118315295308455
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -182,6 +165,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.25}
   m_EdgeRadius: 0
+--- !u!114 &7098082051979091173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038220995171172398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f5f179736ccb44d93f2daa48a870f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  enemyRange: 15
+  viewDistance: 4.3
+  shootDelay: 0.5
+  bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
 --- !u!1 &6002516602976328342
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8867924, g: 0.07864004, b: 0.07864004, a: 1}
+  m_Color: {r: 0, g: 0.5471698, b: 0.1422541, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
