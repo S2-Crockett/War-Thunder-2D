@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae4c6c11e8e7f644a380fb6bf0efbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPlane: {fileID: 2038220995171172398, guid: 2d575bc39908cb04989c769fbe90f0db, type: 3}
+  enemyPlane: {fileID: 2038220995171172398, guid: 354e7f7949e52f54b917be7d92d54bf7, type: 3}
   numPlanesSpawning: 5
   numPlanesMax: 10
   numWaves: 0
@@ -2439,7 +2439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   spawnpoint: {fileID: 1877783789}
-  animation: {fileID: 633049574}
+  anim: {fileID: 633049574}
   currentHealth: 0
 --- !u!114 &2016660243
 MonoBehaviour:

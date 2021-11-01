@@ -243,6 +243,7 @@ public class Enemy : MonoBehaviour
         if (shootDelay <= 0)
             {       
             GameObject bullet = Instantiate(bullets);
+            bullets.GetComponent<Bullet>().offset = 0;
             bullets.GetComponent<Bullet>().player = this.gameObject;
             bullets.GetComponent<Bullet>().cam = cam;
             shootDelay = 0.5f;

@@ -68,7 +68,6 @@ public class Bullet : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
         {
-            print("Collision");
             Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
             health.TakeDamage(1f);  
