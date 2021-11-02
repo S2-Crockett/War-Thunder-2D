@@ -64,7 +64,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
-            spawner.EnemyDestroyed();
+            if (collision.gameObject.tag == "Enemy")
+            {
+                spawner.EnemyDestroyed();
+            }
         }
         if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
         {

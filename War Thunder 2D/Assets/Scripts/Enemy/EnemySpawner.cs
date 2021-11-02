@@ -8,12 +8,16 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPlane;
     public GameObject enemyBomber;
     public Transform player;
+
     public int numPlanesSpawning;
     public int numPlanesMax;
     public int numWaves;
     public float respawningDelay;
     public int enemySpawnOffset = 25;
+
     public ScoreScript scorescript;
+    public NextLevel levelscript;
+
     float bomberChance = 0.9f;
     float bomberTimer = 5f;
 
@@ -64,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if(Random.value > bomberChance)
             {
-                print("Spawn");
+                print("Spawn");             
                 SpawnBomber();
                 bomberTimer = 5.0f;
             }
@@ -188,6 +192,9 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 // GO TO NEXT LEVEL
+                levelscript.LevelNum++;
+                numWaves = 1;
+                Debug.Log("Level increased");
             }
         }
     }
