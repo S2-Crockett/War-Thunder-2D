@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
 
     [Header("Extras")]
     public GameObject bullets;
+    public AudioClip shootingAudio;
+    public AudioClip destroyAudio;
+    private AudioSource audioSource;
     
     [System.NonSerialized] 
     public EnemySpawner spawner;
@@ -54,6 +57,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Target = GameObject.FindWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
         spriterenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -195,21 +199,23 @@ public class Enemy : MonoBehaviour
     private void shoot()
     {
         if (shootDelay <= 0)
-            {       
+        {
+            //audioSource.PlayOneShot(shootingAudio, 0.5f);
             GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().offset = 0;
-            bullets.GetComponent<Bullet>().player = this.gameObject;
-            bullets.GetComponent<Bullet>().cam = cam;
+            bullet.GetComponent<Bullet>().offset = 0;
+            bullet.GetComponent<Bullet>().player = this.gameObject;
+            bullet.GetComponent<Bullet>().cam = cam;
             shootDelay = 0.5f;
-            }
-            else
-            {
-                shootDelay -= Time.deltaTime;
-            }
+        }
+        else
+        {
+            shootDelay -= Time.deltaTime;
+        }
     }
 
     public void MyOwnDestroy()
     {
+        audioSource.PlayOneShot(destroyAudio, 0.5f);
         GameObject boom = Instantiate(destructionPrefab);
         boom.transform.position = transform.position;
 

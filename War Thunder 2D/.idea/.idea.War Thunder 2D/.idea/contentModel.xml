@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\samcr\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\samcr\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_War Thunder 2D.-1788254702.00" t="ExcludeRecursive" />
-    <e p="C:\Users\samcr\OneDrive\Desktop\New folder (2)\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
+    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_War Thunder 2D.1765547715.00" t="ExcludeRecursive" />
+    <e p="D:\University Files\3rd Year\CGD\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Developers" t="Include">
@@ -34,6 +34,9 @@
             </e>
           </e>
         </e>
+        <e p="Explosion.cs" t="Include" />
+        <e p="GameRestart.cs" t="Include" />
+        <e p="LoseSceneScore.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Background" t="Include">
             <e p="BackgroundTile.cs" t="Include" />
@@ -44,14 +47,21 @@
             <e p="EnemySpawner.cs" t="Include" />
           </e>
           <e p="Game" t="Include">
+            <e p="LevelManager.cs" t="Include" />
             <e p="PlayCutscene.cs" t="Include" />
           </e>
           <e p="Powerups" t="Include">
             <e p="CoinPowerup.cs" t="Include" />
+            <e p="Doublepoints.cs" t="Include" />
             <e p="HealthPowerup.cs" t="Include" />
           </e>
+          <e p="Sounds" t="Include">
+            <e p="UISounds.cs" t="Include" />
+          </e>
           <e p="UI" t="Include">
+            <e p="LevelNumberScript.cs" t="Include" />
             <e p="Menu.cs" t="Include" />
+            <e p="NextLevel.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

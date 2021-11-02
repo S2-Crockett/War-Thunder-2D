@@ -5,25 +5,27 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     // public variables
+    [Header("Prefabs")]
     public GameObject enemyPlane;
     public GameObject enemyBomber;
     public Transform player;
-
-    public int numPlanesSpawning;
-    public int numPlanesMax;
-    public int numWaves;
+    public Camera cam;
+    public LevelManager LevelManager;
+    
+    [Header("Settings")]
     public float respawningDelay;
     public int enemySpawnOffset = 25;
 
+    [Header("Scripts")]
     public ScoreScript scorescript;
-    public NextLevel levelscript;
 
-    float bomberChance = 0.9f;
-    float bomberTimer = 5f;
+    [Header("Runtime Generated")]
+    public LevelDifficulty difficulty;
 
-    int index;
-
-    bool cutsceneFinished = false;
+    private float bomberChance = 0.9f;
+    private float bomberTimer = 5f;
+    private int index;
+    private bool cutsceneFinished;
 
     // private variables
     private Vector2[] spawnPositions = new[]
@@ -35,8 +37,7 @@ public class EnemySpawner : MonoBehaviour
         new Vector2(0f, 0f), //bottom
         new Vector2(0f, 0f) //bottom
     };
-
-    public Camera cam;
+    
     private bool gameStarted = false;
     private int planesDestroyed = 0;
     private int planesSpawned = 0;
@@ -72,9 +73,6 @@ public class EnemySpawner : MonoBehaviour
                 bomberTimer = 5.0f;
             }
         }
-
-
-
     }
 
     IEnumerator StartSpawning()
@@ -87,10 +85,10 @@ public class EnemySpawner : MonoBehaviour
                 yield return new WaitForSeconds(8);
                 cutsceneFinished = true;
             }
-            if(cutsceneFinished == true)
+            if(cutsceneFinished)
             {
                 // spawn initial wave of enemies - decrease planes spawned to spawn more.
-            if (planesSpawned < numPlanesSpawning && planesDestroyed + planesSpawned < numPlanesMax)
+            if (planesSpawned < difficulty.enemiesOnScreen && planesDestroyed + planesSpawned < difficulty.maxEnemiesToSpawn)
             {
                 yield return new WaitForSeconds(respawningDelay);
                 SpawnPlane();
@@ -99,7 +97,6 @@ public class EnemySpawner : MonoBehaviour
 
             }
             
-
             yield return new WaitForSeconds(1);
         }
     }
@@ -177,31 +174,43 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
-        print(planesDestroyed);
-
         scorescript.AddScore(100);
 
-        if (planesDestroyed <= numPlanesMax)
+        if (planesDestroyed <= difficulty.maxEnemiesToSpawn)
         {
             planesSpawned--;
         }
         
-        if(planesDestroyed == numPlanesMax)
+        if(planesDestroyed == difficulty.maxEnemiesToSpawn)
         {
-            if (currentWave != numWaves)
+            if (currentWave != difficulty.numberOfWaves)
             {
                 planesDestroyed = 0;
                 currentWave++;
             }
             else
             {
-                print("oh no more waves");
-                Debug.Log("Level increased");
-                // GO TO NEXT LEVEL
-                levelscript.LevelNum++;
-                numWaves = 1;
-                
+                print("Spawn the next level");
+                LevelManager.SpawnNextLevel();
+                resetWaves();
             }
         }
+    }
+
+    public void AddBomberScore()
+    {
+        scorescript.AddScore(150);
+    }
+
+    private void resetWaves()
+    {
+        currentWave = 0;
+        planesDestroyed = 0;
+        planesSpawned = 0;
+    }
+
+    public void setLevelDifficulty(LevelDifficulty lDifficulty)
+    {
+        difficulty = lDifficulty;
     }
 }

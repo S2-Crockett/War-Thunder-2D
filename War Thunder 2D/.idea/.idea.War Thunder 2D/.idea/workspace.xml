@@ -24,13 +24,24 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Prefabs/Bullet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Prefabs/Bullet.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Levels/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy Bomber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy Bomber.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Coin-PU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Coin-PU.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Double Points.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Double Points.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Health-PU.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/Health-PU.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoseScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +53,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game/LevelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
-      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
-      <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy1.cs" />
-      <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1zgY0t7ww5A6nOI6MdWgAApDNfM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -75,7 +94,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -84,7 +103,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -108,6 +127,7 @@
       <workItem from="1635606307680" duration="9344000" />
       <workItem from="1635684829760" duration="24843000" />
       <workItem from="1635714188796" duration="12762000" />
+      <workItem from="1635888517017" duration="7210000" />
     </task>
     <servers />
   </component>
@@ -140,5 +160,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1634650896100" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1635889270943">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1635889270943" />
   </component>
 </project>

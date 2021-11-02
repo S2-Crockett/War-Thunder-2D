@@ -9,10 +9,14 @@ public class Shooting : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
     public Camera cam;
+    
+    public AudioClip shootingAudio;
+    private AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +25,7 @@ public class Shooting : MonoBehaviour
         if(Input.GetButtonDown("Submit"))
         {
             PlayerShoot();
+            audioSource.PlayOneShot(shootingAudio, 0.5f);
         }
     }
 

@@ -16,7 +16,10 @@ public class EnemyBomber : MonoBehaviour
 
     [Header("Extras")]
     public GameObject bullets;
-    
+    public AudioClip shootingAudio;
+    public AudioClip destroyAudio;
+    private AudioSource audioSource;
+
     [System.NonSerialized] 
     public EnemySpawner spawner;
     [System.NonSerialized] 
@@ -27,8 +30,7 @@ public class EnemyBomber : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 screenBounds;
     public GameObject destructionPrefab;
-
-
+    
     private int direction_;
     private float bomberTimer = 1.0f;
 
@@ -36,6 +38,7 @@ public class EnemyBomber : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
@@ -105,6 +108,7 @@ public class EnemyBomber : MonoBehaviour
 
     private void shoot()
     {
+        audioSource.PlayOneShot(shootingAudio, 0.5f);
         if (direction_ == 1)
         {
             GameObject bullet = Instantiate(bullets);
@@ -131,9 +135,10 @@ public class EnemyBomber : MonoBehaviour
 
     public void MyOwnDestroy()
     {
+        audioSource.PlayOneShot(destroyAudio, 0.5f);
         GameObject boom = Instantiate(destructionPrefab);
+        spawner.AddBomberScore();
         boom.transform.position = transform.position;
-
         Destroy(gameObject);
     }
 }

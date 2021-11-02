@@ -11,7 +11,7 @@ public class ScoreScript : MonoBehaviour
     public Text scoreResult;
 
     private bool bShouldDouble = false;
-    public float power_up_duration = 4.0f;
+    public float power_up_duration = 10.0f;
     float time = 0.0f;
 
 

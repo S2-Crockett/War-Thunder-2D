@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
 
     public GameObject player;
     public Camera cam;
+    public float manualDestruction = 1.5f;
 
     public PlayerHealth health;
 
@@ -26,74 +27,84 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-            rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        if (player != null)
+        {
+            playerTran = player.transform;
+            transform.rotation = new Quaternion(playerTran.rotation.x, playerTran.rotation.y,
+                playerTran.rotation.z + offset, playerTran.rotation.w);
+            transform.position = player.transform.position;
+            health = player.GetComponent<PlayerHealth>();
+        }
 
-
-            if (player != null)
-            {
-                playerTran = player.transform;
-                transform.rotation = new Quaternion(playerTran.rotation.x, playerTran.rotation.y, playerTran.rotation.z + offset, playerTran.rotation.w);
-                transform.position = player.transform.position;
-                health = player.GetComponent<PlayerHealth>();
-            }
-
-            rb.velocity = transform.up * 20;
-            spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
-    
-   
+        rb.velocity = transform.up * 20;
+        spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
+        StartCoroutine(ManualDestroy());
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(cam)
+        if (cam)
         {
             if (transform.position.x < cam.transform.position.x - 15)
-                    {
-                        Destroy(this.gameObject);
-                        // once player is off the screen rotate back towards the player with a random offset and carry on in 
-                        // that direction
-                    }
-                    if (transform.position.x > cam.transform.position.x + 15)
-                    {
-                        Destroy(this.gameObject);
-                    }
-                    if (transform.position.y < cam.transform.position.y - 12)
-                    {
-                        Destroy(this.gameObject);
-                    }
-                    if (transform.position.y > cam.transform.position.y + 12)
-                    {
-                        Destroy(this.gameObject);
-                    }
-        }
-        
+            {
+                Destroy(this.gameObject);
+            }
 
+            if (transform.position.x > cam.transform.position.x + 15)
+            {
+                Destroy(this.gameObject);
+            }
+
+            if (transform.position.y < cam.transform.position.y - 12)
+            {
+                Destroy(this.gameObject);
+            }
+
+            if (transform.position.y > cam.transform.position.y + 12)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBomber") && player.gameObject.tag == "Player")
+        if (this != null)
         {
-            if (collision.gameObject.tag == "Enemy")
+            if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBomber") &&
+                player.gameObject.tag == "Player")
             {
-                collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
-                spawner.EnemyDestroyed();
+                if (collision.gameObject.tag == "Enemy")
+                {
+                    collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
+                    spawner.EnemyDestroyed();
+                }
+
+                if (collision.gameObject.tag == "EnemyBomber")
+                {
+                    collision.gameObject.GetComponent<EnemyBomber>().MyOwnDestroy();
+                }
+
+                Destroy(gameObject);
             }
-            if (collision.gameObject.tag == "EnemyBomber")
+
+            if (collision.gameObject.tag == "Player" &&
+                (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
             {
-                collision.gameObject.GetComponent<EnemyBomber>().MyOwnDestroy();
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1.1f);
+                Destroy(gameObject);
             }
-        
-            Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1.1f);
-            Destroy(gameObject);
-        }
+      
+    }
+
+    IEnumerator ManualDestroy()
+    {
+        yield return new WaitForSeconds(manualDestruction);
+        Destroy(gameObject);
     }
 
 }
