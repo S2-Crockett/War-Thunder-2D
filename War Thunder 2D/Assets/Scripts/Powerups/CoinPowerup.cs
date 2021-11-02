@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinPowerup : MonoBehaviour
 {
     [System.NonSerialized] 
-    public ScoreScript score;
+    public  ScoreScript score;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {

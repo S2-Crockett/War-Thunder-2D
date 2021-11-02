@@ -8,10 +8,13 @@ public class ScoreScript : MonoBehaviour
     public Text MyScoreText;
     public int ScoreNum;
     public GameObject player;
+    public Text scoreResult;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         ScoreNum = 0;
         MyScoreText.text = "00000" + ScoreNum;
     }
@@ -19,7 +22,7 @@ public class ScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+        //scoreResult.text = "" + ScoreNum;
     }
     
 }

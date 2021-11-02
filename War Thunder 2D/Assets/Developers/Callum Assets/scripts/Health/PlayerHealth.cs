@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float startingHealth;
     public Transform spawnpoint;
     public PlayableDirector anim;
-    int lives = 3;
+    int lives = 1;
     public float currentHealth;
 
     private void Awake()
@@ -26,10 +26,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Update()
     {
-        if (lives == 0)
-        {
-            Die();
-        }
+        
     }
     public void TakeDamage(float _damage)
     {
@@ -47,10 +44,14 @@ public class PlayerHealth : MonoBehaviour
                 Respawn();
             }
         }
+        if (lives == 0)
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("LoseScene");
     }
 }
