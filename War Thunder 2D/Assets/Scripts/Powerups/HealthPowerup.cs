@@ -14,14 +14,7 @@ public class HealthPowerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if(health.currentHealth < 3.3f)
-            {
-                health.currentHealth = 3.3f;
-            }
-            else
-            {
-                health.currentHealth++;
-            }
+            health.currentHealth = health.currentHealth + 1.1f;
             Destroy(gameObject);
         }
     }

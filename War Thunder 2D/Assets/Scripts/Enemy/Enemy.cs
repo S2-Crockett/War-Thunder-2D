@@ -69,6 +69,21 @@ public class Enemy : MonoBehaviour
             checkForPlayer();
             chasePlayer();
         }
+        if(gameObject.tag == "EnemyBomber")
+        {
+            spawningDirectionBomber();
+            BomberFire();
+            if (transform.position.x < cam.transform.position.x - 10)
+            {
+                Destroy(this.gameObject);
+                // once player is off the screen rotate back towards the player with a random offset and carry on in 
+                // that direction
+            }
+            if (transform.position.x > cam.transform.position.x + 10)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
 
@@ -214,6 +229,7 @@ public class Enemy : MonoBehaviour
                 shootDelay -= Time.deltaTime;
             }
     }
+
     private void shootBomb()
     {
             if (direction_ == 1)

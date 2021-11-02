@@ -15,12 +15,15 @@ public class BackgroundTile : MonoBehaviour
 
     private GameObject tileObject;
     private SpriteRenderer _spriteRenderer;
+    private BoxCollider2D _collider;
 
 
     // Start is called before the first frame update
     void Start()
     {
         _spriteRenderer = this.transform.Find("Square").GetComponent<SpriteRenderer>();
+        _collider = GetComponent<BoxCollider2D>();
+        _collider.enabled = false;
         this.gameObject.name = "Tile - " + tilePosition.y;
         getTileType();
         SpawnPowerups();
@@ -70,6 +73,7 @@ public class BackgroundTile : MonoBehaviour
                 break;
             case 1:
                 _spriteRenderer.sprite = generator.tileTypes[1].sprite;
+                _collider.enabled = true;
                 break;
             case 2:
                 _spriteRenderer.sprite = generator.tileTypes[2].sprite;
@@ -92,27 +96,42 @@ public class BackgroundTile : MonoBehaviour
             {
                 if (powerUp.tag == "Heart")
                 {
-                    GameObject heart = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0,0,0));
+                    GameObject heart = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0, 0, 0));
                     heart.GetComponent<HealthPowerup>().health = player.GetComponent<PlayerHealth>();
                     heart.transform.SetParent(this.transform);
                 }
                 else if (powerUp.tag == "Coin")
                 {
-                    GameObject coin = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0,0,0));
+                    GameObject coin = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0, 0, 0));
                     coin.GetComponent<CoinPowerup>().score = player.GetComponent<ScoreScript>();
                     coin.transform.SetParent(this.transform);
                 }
+                else if(powerUp.tag == "Double")
+                {
+                    GameObject doublePoints = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0, 0, 0));
+                    doublePoints.GetComponent<Doublepoints>().score = player.GetComponent<ScoreScript>();
+                    doublePoints.transform.SetParent(this.transform);
+                }
             }
         }
-
-        Vector3 GetRandomLocationInRange()
-        {
-            Vector3 position = new Vector3(tilePosition.x + 15f + Random.insideUnitCircle.x * Random.Range(5f, 25f),
-                tilePosition.y + 15f + Random.insideUnitCircle.y * Random.Range(5f, 25f), 0f);
-            return position;
-        }
     }
-    
+
+    Vector3 GetRandomLocationInRange()
+    {
+        Vector3 position = new Vector3(tilePosition.x + 15f + Random.insideUnitCircle.x * Random.Range(5f, 25f),
+            tilePosition.y + 15f + Random.insideUnitCircle.y * Random.Range(5f, 25f), 0f);
+        return position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player" || collision.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+
+    }
+
 }
 
 [System.Serializable]

@@ -8,13 +8,16 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyPlane;
     public GameObject enemyBomber;
     public Transform player;
+
     public int numPlanesSpawning;
     public int numPlanesMax;
     public int numWaves;
     public float respawningDelay;
     public int enemySpawnOffset = 25;
-    public Sprite destructionSprite;
+
     public ScoreScript scorescript;
+    public NextLevel levelscript;
+
     float bomberChance = 0.9f;
     float bomberTimer = 5f;
 
@@ -65,7 +68,7 @@ public class EnemySpawner : MonoBehaviour
         {
             if(Random.value > bomberChance)
             {
-                print("Spawn");
+                print("Spawn");             
                 SpawnBomber();
                 bomberTimer = 5.0f;
             }
@@ -103,6 +106,9 @@ public class EnemySpawner : MonoBehaviour
         plane.GetComponent<Enemy>().spawner = this;
 
         // choose a random location , based off of the players height and spawn them
+        int index = Random.Range(0, spawnPositions.Length);
+
+        plane.transform.position = spawnPositions[index];
 
         if (player.position.y < 15)
         {
@@ -132,8 +138,9 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (index == 3)
         {
-            //bottom
-            plane.GetComponent<Enemy>().initialVelocity = new Vector2(0,1);
+ 
+            plane.GetComponent<Enemy>().initialVelocity = new Vector2(0, 1);
+       
         }
     }
 
@@ -161,19 +168,8 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
-        
-        // Score script
-        if (scorescript.ScoreNum > 1000)
-        {
-            scorescript.ScoreNum += 100;
-            scorescript.MyScoreText.text = "000" + scorescript.ScoreNum;
-        }
-        else if (scorescript.ScoreNum <= 1000)
-        {
-            scorescript.ScoreNum += 100;
-            scorescript.MyScoreText.text = "00" + scorescript.ScoreNum;
-        }
-        
+
+        scorescript.AddScore(100);
 
         if (planesDestroyed < numPlanesMax)
         {
@@ -189,6 +185,10 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 // GO TO NEXT LEVEL
+                levelscript.LevelNum++;
+                numWaves = 1;
+                Debug.Log("Level increased");
+               
             }
         }
     }

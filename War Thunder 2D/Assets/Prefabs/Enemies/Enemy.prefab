@@ -82,7 +82,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.08, y: 7.23}
   m_EdgeRadius: 0
---- !u!212 &1317731257358089407
+--- !u!114 &7098082051979091173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038220995171172398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f5f179736ccb44d93f2daa48a870f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  enemyRange: 15
+  viewDistance: 10
+  shootDelay: 0.1
+  bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
+--- !u!212 &4076970840399190237
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
