@@ -123,8 +123,9 @@ MonoBehaviour:
   speed: 5
   player: {fileID: 0}
   cam: {fileID: 0}
-  scorescript: {fileID: 0}
   health: {fileID: 0}
+  offset: 0
+  sprite: {fileID: 21300000, guid: d3771cceacc340d419afd103fa0260e7, type: 3}
 --- !u!61 &3643864437352799221
 BoxCollider2D:
   m_ObjectHideFlags: 0

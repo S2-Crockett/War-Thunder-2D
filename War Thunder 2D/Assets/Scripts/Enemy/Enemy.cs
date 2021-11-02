@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     private Vector3 screenBounds;
 
     private bool follow = false;
-    private float followTimer = 2.0f;
+    private float followTimer = 4.0f;
     private float bomberTimer = 1.0f;
     private Transform Target;
     private float RotationSpeed = 2.0f;
@@ -39,6 +39,13 @@ public class Enemy : MonoBehaviour
     private Vector3 direction;
     private int direction_;
 
+    private SpriteRenderer spriterenderer;
+    public GameObject destructionPrefab;
+    private float spriteTimer = 2.0f;
+
+    private bool destroyed = false;
+    
+
     RaycastHit2D hit;
 
     private bool setDir = true;
@@ -47,6 +54,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Target = GameObject.FindWithTag("Player").transform;
+        spriterenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -61,56 +69,44 @@ public class Enemy : MonoBehaviour
             checkForPlayer();
             chasePlayer();
         }
-        if(gameObject.tag == "EnemyBomber")
-        {
-            spawningDirectionBomber();
-            BomberFire();
-            if (transform.position.x < cam.transform.position.x - 10)
-            {
-                Destroy(this.gameObject);
-                // once player is off the screen rotate back towards the player with a random offset and carry on in 
-                // that direction
-            }
-            if (transform.position.x > cam.transform.position.x + 10)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-
-
     }
-    
+
+
+
     private void checkDirection()
     {
-        float camX = cam.transform.position.x;
-        float camY = cam.transform.position.y;
+        if (cam)
+        {
+            float camX = cam.transform.position.x;
+            float camY = cam.transform.position.y;
 
-        //Change to just redirect enemies to a different position once off the screen.
-        //once player is off the screen rotate back towards the player with a random offset and carry on in 
-        if (transform.position.x < camX - enemyRange)
-        {
-            // needs to trigger once?
-            SetMovementDirection();
-            RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
-        }
-        if (transform.position.x > camX + enemyRange)
-        {
-            SetMovementDirection();
-            RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
-        }
-        if (transform.position.y < camY - enemyRange)
-        {
-            SetMovementDirection();
-            RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
-        }
-        if (transform.position.y > camY + enemyRange)
-        {
-            SetMovementDirection();
-            RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
+            //Change to just redirect enemies to a different position once off the screen.
+            //once player is off the screen rotate back towards the player with a random offset and carry on in 
+            if (transform.position.x < camX - enemyRange)
+            {
+                // needs to trigger once?
+                SetMovementDirection();
+                RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+                followTimer = 4.0f;
+            }
+            if (transform.position.x > camX + enemyRange)
+            {
+                SetMovementDirection();
+                RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+                followTimer = 4.0f;
+            }
+            if (transform.position.y < camY - enemyRange)
+            {
+                SetMovementDirection();
+                RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+                followTimer = 4.0f;
+            }
+            if (transform.position.y > camY + enemyRange)
+            {
+                SetMovementDirection();
+                RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+                followTimer = 4.0f;
+            }
         }
         
     }
@@ -132,38 +128,6 @@ public class Enemy : MonoBehaviour
                 //this is going to be moving from top or bottom
                 rb.velocity = new Vector2(Random.Range(-0.5f, 0.5f), initialVelocity.y) * speed;
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            }
-        }
-    }
-    private void spawningDirectionBomber()
-    {
-
-        if (rb.velocity.x == 0 || rb.velocity.y == 0)
-        {
-            // x will always be 0 to head towards the player, y will have a random offset
-            if (initialVelocity.y == 0)
-            {
-                //this is going to be moving from left or right
-                if (setDir)
-                {
-                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
-                    setDir = false;
-                }
-                rb.velocity = new Vector3(1, 0, 0) * speed;
-                rb.rotation = -90;
-                direction_ = 1;
-            }
-            else
-            {
-                //this is going to be moving from top or bottom
-                if (setDir)
-                {
-                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
-                    setDir = false;
-                }
-                rb.velocity = new Vector3(-1, 0, 0) * speed;
-                rb.rotation = 90;
-                direction_ = 2;
             }
         }
     }
@@ -211,16 +175,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void BomberFire()
-    {
-        bomberTimer -= 1.0f * Time.deltaTime;
-        if(bomberTimer <= 0)
-        {
-            shootBomb();
-            bomberTimer = 1.0f;
-        }
-    }
-
     private void chasePlayer()
     {
         direction = Target.position - transform.position;
@@ -253,19 +207,13 @@ public class Enemy : MonoBehaviour
                 shootDelay -= Time.deltaTime;
             }
     }
-    private void shootBomb()
+
+    public void MyOwnDestroy()
     {
-            if (direction_ == 1)
-            {
-                GameObject bullet = Instantiate(bullets);
-                bullets.GetComponent<Bullet>().offset = 90;
-            }
-            if (direction_ == 2)
-            {
-                GameObject bullet = Instantiate(bullets);
-                bullets.GetComponent<Bullet>().offset = -90;
-            }
-            bullets.GetComponent<Bullet>().player = this.gameObject;
-            bullets.GetComponent<Bullet>().cam = cam;
+        GameObject boom = Instantiate(destructionPrefab);
+        boom.transform.position = transform.position;
+
+        Destroy(gameObject);
     }
+
 }

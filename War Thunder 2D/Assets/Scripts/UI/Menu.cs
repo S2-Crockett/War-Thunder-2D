@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
         {
             if (EventSystem.current.currentSelectedGameObject == startButton)
             {
-                SceneManager.LoadScene("GameScene");
+                SceneManager.LoadScene("Level");
             }
             else if(EventSystem.current.currentSelectedGameObject == quitButton)
             {
