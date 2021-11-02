@@ -925,7 +925,7 @@ PrefabInstance:
     - target: {fileID: 5710205901835833225, guid: 548c9d59425d6344f9868ca0038ef0be, type: 3}
       propertyPath: enemyPlane
       value: 
-      objectReference: {fileID: 2038220995171172398, guid: 25020a55c02b29c4696dce6fead8f6bd, type: 3}
+      objectReference: {fileID: 2038220995171172398, guid: 0a2888e03527e3a4a8cff8999076d4b2, type: 3}
     - target: {fileID: 5710205901835833225, guid: 548c9d59425d6344f9868ca0038ef0be, type: 3}
       propertyPath: enemyBomber
       value: 
@@ -934,6 +934,10 @@ PrefabInstance:
       propertyPath: scorescript
       value: 
       objectReference: {fileID: 695539090}
+    - target: {fileID: 5710205901835833225, guid: 548c9d59425d6344f9868ca0038ef0be, type: 3}
+      propertyPath: destructionSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d3771cceacc340d419afd103fa0260e7, type: 3}
     - target: {fileID: 5710205901835833226, guid: 548c9d59425d6344f9868ca0038ef0be, type: 3}
       propertyPath: m_Name
       value: Enemy Spawner

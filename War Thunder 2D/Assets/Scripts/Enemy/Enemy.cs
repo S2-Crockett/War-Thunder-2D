@@ -39,6 +39,13 @@ public class Enemy : MonoBehaviour
     private Vector3 direction;
     private int direction_;
 
+    private SpriteRenderer spriterenderer;
+    public GameObject destructionPrefab;
+    private float spriteTimer = 2.0f;
+
+    private bool destroyed = false;
+    
+
     RaycastHit2D hit;
 
     private bool setDir = true;
@@ -47,6 +54,7 @@ public class Enemy : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         Target = GameObject.FindWithTag("Player").transform;
+        spriterenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -62,6 +70,8 @@ public class Enemy : MonoBehaviour
             chasePlayer();
         }
     }
+
+
     
     private void checkDirection()
     {
@@ -219,4 +229,13 @@ public class Enemy : MonoBehaviour
             bullets.GetComponent<Bullet>().player = this.gameObject;
             bullets.GetComponent<Bullet>().cam = cam;
     }
+
+    public void MyOwnDestroy()
+    {
+        GameObject boom = Instantiate(destructionPrefab);
+        boom.transform.position = transform.position;
+
+        Destroy(gameObject);
+    }
+
 }

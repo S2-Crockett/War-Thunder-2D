@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public int numWaves;
     public float respawningDelay;
     public int enemySpawnOffset = 25;
+    public Sprite destructionSprite;
     public ScoreScript scorescript;
     float bomberChance = 0.9f;
     float bomberTimer = 5f;

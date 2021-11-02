@@ -96,9 +96,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6.5
   enemyRange: 15
-  viewDistance: 4.3
+  viewDistance: 10
   shootDelay: 0.5
   bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
+  destructionPrefab: {fileID: 8054830953899479832, guid: 18f1234a4c91a6e4bbed39ae0b0cf575, type: 3}
 --- !u!212 &1317731257358089407
 SpriteRenderer:
   m_ObjectHideFlags: 0

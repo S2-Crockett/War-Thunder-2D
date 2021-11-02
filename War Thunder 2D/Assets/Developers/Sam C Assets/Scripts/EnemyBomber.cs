@@ -26,6 +26,7 @@ public class EnemyBomber : MonoBehaviour
     
     private Rigidbody2D rb;
     private Vector3 screenBounds;
+    public GameObject destructionPrefab;
 
 
     private int direction_;
@@ -126,5 +127,13 @@ public class EnemyBomber : MonoBehaviour
             shoot();
             bomberTimer = 1.0f;
         }
+    }
+
+    public void MyOwnDestroy()
+    {
+        GameObject boom = Instantiate(destructionPrefab);
+        boom.transform.position = transform.position;
+
+        Destroy(gameObject);
     }
 }

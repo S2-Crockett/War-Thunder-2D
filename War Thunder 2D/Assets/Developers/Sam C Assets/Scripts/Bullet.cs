@@ -18,6 +18,11 @@ public class Bullet : MonoBehaviour
 
     public int offset = 0;
     private Transform playerTran;
+
+    private SpriteRenderer spriterenderer;
+    public Sprite sprite;
+    private float SpriteTimer = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,18 +61,27 @@ public class Bullet : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBomber") && player.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            if (collision.gameObject.tag == "Enemy")
+            {
+                collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
+                spawner.EnemyDestroyed();
+            }
+            if (collision.gameObject.tag == "EnemyBomber")
+            {
+                collision.gameObject.GetComponent<EnemyBomber>().MyOwnDestroy();
+            }
+        
             Destroy(gameObject);
-            spawner.EnemyDestroyed();
         }
         if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
-        {
+        { 
             Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
             health.TakeDamage(1f);  

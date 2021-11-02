@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour
     int lives = 3;
     public float currentHealth;
 
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -53,4 +54,6 @@ public class PlayerHealth : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScene");
     }
+
+
 }
