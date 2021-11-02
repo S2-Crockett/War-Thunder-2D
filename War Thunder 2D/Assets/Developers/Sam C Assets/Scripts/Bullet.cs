@@ -15,14 +15,18 @@ public class Bullet : MonoBehaviour
     public Camera cam;
 
     public PlayerHealth health;
+
+    public int offset = 0;
+    private Transform playerTran;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerTran = player.transform;
 
         if (player != null)
         {
-            transform.rotation = player.transform.rotation;
+            transform.rotation = new Quaternion(playerTran.rotation.x, playerTran.rotation.y, playerTran.rotation.z + offset, playerTran.rotation.w);
             transform.position = player.transform.position;
             health = player.GetComponent<PlayerHealth>();
         }
@@ -56,17 +60,17 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && player.gameObject.tag == "Player")
+        if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBomber") && player.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
             spawner.EnemyDestroyed();
         }
-        if (collision.gameObject.tag == "Player" && player.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
         {
             Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
-            health.TakeDamage(0.5f);  
+            health.TakeDamage(1f);  
         }
     }
 

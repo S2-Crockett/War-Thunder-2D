@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_War Thunder 2D.1765547715.00" t="ExcludeRecursive" />
-    <e p="D:\University Files\3rd Year\CGD\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
+    <e p="C:\Users\samcr\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\samcr\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_War Thunder 2D.-1788254702.00" t="ExcludeRecursive" />
+    <e p="C:\Users\samcr\OneDrive\Desktop\New folder (2)\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Developers" t="Include">
@@ -27,6 +27,7 @@
             <e p="Scripts" t="Include">
               <e p="Bullet.cs" t="Include" />
               <e p="CameraMovement.cs" t="Include" />
+              <e p="EnemyBomber.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
               <e p="Shooting.cs" t="Include" />
               <e p="SpriteChange.cs" t="Include" />

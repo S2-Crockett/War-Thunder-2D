@@ -96,8 +96,8 @@ GameObject:
   - component: {fileID: 560118315295308455}
   - component: {fileID: 7098082051979091173}
   m_Layer: 2
-  m_Name: Enemy
-  m_TagString: Enemy
+  m_Name: Enemy Bomber
+  m_TagString: EnemyBomber
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   enemyRange: 15
-  viewDistance: 10
+  viewDistance: 4.3
   shootDelay: 0.5
   bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
 --- !u!1 &6002516602976328342
@@ -255,7 +255,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.54901963, g: 0.09274564, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.5471698, b: 0.1422541, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

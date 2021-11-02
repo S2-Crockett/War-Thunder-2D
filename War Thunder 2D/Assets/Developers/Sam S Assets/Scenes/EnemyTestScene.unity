@@ -537,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 3
   spawnpoint: {fileID: 0}
+  anim: {fileID: 0}
   currentHealth: 0
 --- !u!114 &695539090
 MonoBehaviour:
@@ -570,8 +571,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.32, y: 3.38}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -594,14 +595,14 @@ MonoBehaviour:
   rotation: 2
   transform_: {fileID: 695539098}
   spriteArray:
-  - {fileID: 21300000, guid: 81f465973a07d10438f7422c9d3b518c, type: 3}
-  - {fileID: 21300000, guid: bff1cf7c6f3f29a4b9ffd45eb294e317, type: 3}
-  - {fileID: 21300000, guid: 37811f70506fe2946980714c94ab501f, type: 3}
-  - {fileID: 21300000, guid: 8c3696a0704b5a84d88546cbc2caf904, type: 3}
-  - {fileID: 21300000, guid: 9afef244d5372eb44bbbf19b1ad136a2, type: 3}
-  - {fileID: 21300000, guid: bd5bbaa541ca9c140bbb801c94228a78, type: 3}
-  - {fileID: 21300000, guid: a122631fcfd5c7c4d8640bc1cbb5523b, type: 3}
-  - {fileID: 21300000, guid: c141b85c8572d2643a074423f35f6333, type: 3}
+  - {fileID: 21300000, guid: 89d431c3b28dc0f469e88e9615a489e0, type: 3}
+  - {fileID: 21300000, guid: f8540fa1f005a194c9d1babb37a67471, type: 3}
+  - {fileID: 21300000, guid: fa2e44a83bd1bec40a54e81407f2515f, type: 3}
+  - {fileID: 21300000, guid: f8540fa1f005a194c9d1babb37a67471, type: 3}
+  - {fileID: 21300000, guid: 89d431c3b28dc0f469e88e9615a489e0, type: 3}
+  - {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
+  - {fileID: 21300000, guid: 318016f27d65b494ba753f81784b7b72, type: 3}
+  - {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
 --- !u!50 &695539093
 Rigidbody2D:
   serializedVersion: 4
@@ -714,7 +715,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 81f465973a07d10438f7422c9d3b518c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f6f0ff215a24bd6449cb3316c91de3ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -722,7 +723,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &695539098
@@ -734,7 +735,7 @@ Transform:
   m_GameObject: {fileID: 695539088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 60, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 10}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -962,7 +963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae4c6c11e8e7f644a380fb6bf0efbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPlane: {fileID: 2038220995171172398, guid: 354e7f7949e52f54b917be7d92d54bf7, type: 3}
+  enemyPlane: {fileID: 2038220995171172398, guid: 25020a55c02b29c4696dce6fead8f6bd, type: 3}
   numPlanesSpawning: 5
   numPlanesMax: 10
   numWaves: 3
@@ -1067,7 +1068,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1957480352}
-  - component: {fileID: 1957480353}
   - component: {fileID: 1957480354}
   m_Layer: 0
   m_Name: TileGenerator
@@ -1090,18 +1090,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1957480353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1957480351}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc34b7ab20965a7498035972993cd1bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1957480354
 MonoBehaviour:
   m_ObjectHideFlags: 0

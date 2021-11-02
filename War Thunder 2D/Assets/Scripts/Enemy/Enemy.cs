@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,8 +13,6 @@ public class Enemy : MonoBehaviour
 
     [Header("Behaviour")] 
     public float viewDistance = 4.3f;
-    public float chaseTimeMin;
-    public float chaseTimeMax;
     public float shootDelay = 0.5f;
 
     [Header("Extras")]
@@ -28,19 +28,56 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 screenBounds;
 
+    private bool follow = false;
+    private float followTimer = 2.0f;
+    private float bomberTimer = 1.0f;
+    private Transform Target;
+    private float RotationSpeed = 2.0f;
+    private float distance;
+
+    private Quaternion lookRotation;
+    private Vector3 direction;
+    private int direction_;
+
+    RaycastHit2D hit;
+
+    private bool setDir = true;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        int layM = 1 << 11;
+        Target = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkDirection();
-        spawningDirection();
-        checkForPlayer();
+        distance = Vector3.Distance(transform.position, Target.transform.position);
+
+        if (gameObject.tag == "Enemy")
+        {
+            checkDirection();
+            spawningDirection();
+            checkForPlayer();
+            chasePlayer();
+        }
+        if(gameObject.tag == "EnemyBomber")
+        {
+            spawningDirectionBomber();
+            BomberFire();
+            if (transform.position.x < cam.transform.position.x - 10)
+            {
+                Destroy(this.gameObject);
+                // once player is off the screen rotate back towards the player with a random offset and carry on in 
+                // that direction
+            }
+            if (transform.position.x > cam.transform.position.x + 10)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+
     }
     
     private void checkDirection()
@@ -55,26 +92,29 @@ public class Enemy : MonoBehaviour
             // needs to trigger once?
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+            followTimer = 2.0f;
         }
-
         if (transform.position.x > camX + enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+            followTimer = 2.0f;
         }
-
         if (transform.position.y < camY - enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+            followTimer = 2.0f;
         }
-
         if (transform.position.y > camY + enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+            followTimer = 2.0f;
         }
+        
     }
+
 
     private void spawningDirection()
     {
@@ -92,6 +132,38 @@ public class Enemy : MonoBehaviour
                 //this is going to be moving from top or bottom
                 rb.velocity = new Vector2(Random.Range(-0.5f, 0.5f), initialVelocity.y) * speed;
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
+            }
+        }
+    }
+    private void spawningDirectionBomber()
+    {
+
+        if (rb.velocity.x == 0 || rb.velocity.y == 0)
+        {
+            // x will always be 0 to head towards the player, y will have a random offset
+            if (initialVelocity.y == 0)
+            {
+                //this is going to be moving from left or right
+                if (setDir)
+                {
+                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
+                    setDir = false;
+                }
+                rb.velocity = new Vector3(1, 0, 0) * speed;
+                rb.rotation = -90;
+                direction_ = 1;
+            }
+            else
+            {
+                //this is going to be moving from top or bottom
+                if (setDir)
+                {
+                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
+                    setDir = false;
+                }
+                rb.velocity = new Vector3(-1, 0, 0) * speed;
+                rb.rotation = 90;
+                direction_ = 2;
             }
         }
     }
@@ -127,8 +199,11 @@ public class Enemy : MonoBehaviour
         if (hit.collider != null && hit.collider.tag == "Player")
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * viewDistance, Color.yellow);
-            Debug.Log("Did Hit");
             shoot();
+            if (distance <= 10.0f)
+            {
+                follow = true;
+            }
         }
         else
         {
@@ -136,26 +211,61 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void BomberFire()
+    {
+        bomberTimer -= 1.0f * Time.deltaTime;
+        if(bomberTimer <= 0)
+        {
+            shootBomb();
+            bomberTimer = 1.0f;
+        }
+    }
+
     private void chasePlayer()
     {
-        
+        direction = Target.position - transform.position;
+        float angle = math.atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
+        Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+        if (follow)
+        {
+            followTimer -= 1.0f * Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(transform.rotation,  q, Time.deltaTime * RotationSpeed);
+            rb.velocity = transform.up * speed;
+        }
+        if (followTimer <= 0)
+        {
+            follow = false;
+        }
     }
 
     private void shoot()
     {
-      
-            if (shootDelay <= 0)
-            {
-                GameObject bullet = Instantiate(bullets);
-                bullets.GetComponent<Bullet>().player = this.gameObject;
-                bullets.GetComponent<Bullet>().cam = cam;
-                shootDelay = 0.5f;
+        if (shootDelay <= 0)
+            {       
+            GameObject bullet = Instantiate(bullets);
+            bullets.GetComponent<Bullet>().offset = 0;
+            bullets.GetComponent<Bullet>().player = this.gameObject;
+            bullets.GetComponent<Bullet>().cam = cam;
+            shootDelay = 0.5f;
             }
             else
             {
                 shootDelay -= Time.deltaTime;
             }
     }
-    
-      
+    private void shootBomb()
+    {
+            if (direction_ == 1)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullets.GetComponent<Bullet>().offset = 90;
+            }
+            if (direction_ == 2)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullets.GetComponent<Bullet>().offset = -90;
+            }
+            bullets.GetComponent<Bullet>().player = this.gameObject;
+            bullets.GetComponent<Bullet>().cam = cam;
+    }
 }

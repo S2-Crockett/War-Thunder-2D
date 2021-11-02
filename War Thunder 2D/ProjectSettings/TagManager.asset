@@ -10,11 +10,12 @@ TagManager:
   - Heart
   - Ground
   - Coin
+  - EnemyBomber
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
