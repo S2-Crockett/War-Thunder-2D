@@ -7,6 +7,7 @@ public class EnemySpawner : MonoBehaviour
     // public variables
     public GameObject enemyPlane;
     public GameObject enemyBomber;
+    public Transform player;
     public int numPlanesSpawning;
     public int numPlanesMax;
     public int numWaves;
@@ -15,6 +16,8 @@ public class EnemySpawner : MonoBehaviour
     public ScoreScript scorescript;
     float bomberChance = 0.9f;
     float bomberTimer = 5f;
+
+    int index;
 
 
     // private variables
@@ -99,8 +102,17 @@ public class EnemySpawner : MonoBehaviour
         plane.GetComponent<Enemy>().spawner = this;
 
         // choose a random location , based off of the players height and spawn them
-        int index = Random.Range(0, 3);
-        plane.transform.position = spawnPositions[index];
+
+        if (player.position.y < 15)
+        {
+            index = Random.Range(0, 2);
+            plane.transform.position = spawnPositions[index];
+        }
+        else
+        {
+            index = Random.Range(0, 3);
+            plane.transform.position = spawnPositions[index];
+        }
 
         if (index == 0)
         {
