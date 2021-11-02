@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7511714762818561906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7511714762818561869}
+  - component: {fileID: 7511714762818561871}
+  m_Layer: 0
+  m_Name: TileGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7511714762818561869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511714762818561906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7511714762818561871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7511714762818561906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ebf9b943b1eeb646a6543f2f6e1b915, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerTransform: {fileID: 0}
+  baseTile: {fileID: 7843685602907733474, guid: 349020a316e4dea48a3402dd24056de9, type: 3}
+  tileRenderRange: 2
+  tileTypes:
+  - tileName: Dirt
+    layer: 0
+    sprite: {fileID: 21300000, guid: 1647d3fab2198154fba10669108c6d33, type: 3}
+  - tileName: Ground
+    layer: 1
+    sprite: {fileID: 21300000, guid: b5ae87977b4e40842ae318aeb955851a, type: 3}
+  - tileName: Sky
+    layer: 2
+    sprite: {fileID: 21300000, guid: b618d8500a80d8e49a68853befddb42f, type: 3}
+  - tileName: Transition
+    layer: 3
+    sprite: {fileID: 21300000, guid: 534824e6944a7714581ab096df694998, type: 3}
+  - tileName: Space
+    layer: 4
+    sprite: {fileID: 21300000, guid: 746ed10daa5aa3b49814f0816b0e4e53, type: 3}
