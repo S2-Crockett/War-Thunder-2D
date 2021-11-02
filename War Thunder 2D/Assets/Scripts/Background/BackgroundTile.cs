@@ -13,10 +13,11 @@ public class BackgroundTile : MonoBehaviour
 
     [System.NonSerialized] public GameObject player;
 
+    [System.NonSerialized] public GameObject spawner;
+
     private GameObject tileObject;
     private SpriteRenderer _spriteRenderer;
     private BoxCollider2D _collider;
-
 
     // Start is called before the first frame update
     void Start()
@@ -125,9 +126,14 @@ public class BackgroundTile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag == "Enemy")
+        if (collision.tag == "Player")
         {
             Destroy(collision.gameObject);
+        }
+        else if(collision.tag == "Enemy")
+        {
+            spawner.GetComponent<EnemySpawner>().EnemyDestroyed();
+            collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
         }
 
     }

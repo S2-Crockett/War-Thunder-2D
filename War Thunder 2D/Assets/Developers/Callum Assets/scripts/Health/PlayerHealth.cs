@@ -17,24 +17,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    
-    public void Respawn()
-    {
-        this.transform.position = spawnpoint.position;
-        anim.Play();
-    }
-
-    private void Update()
-    {
-      
-    }
 
     public void TakeDamage(float _damage)
     {
         if (anim.state != PlayState.Playing)
         {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-            if (currentHealth > 0)
+            if (currentHealth > 1)
             {
                 //player hurt
             }
@@ -42,10 +31,6 @@ public class PlayerHealth : MonoBehaviour
             {
                 Die();
             }
-        }
-        if (lives == 0)
-        {
-            Die();
         }
     }
 

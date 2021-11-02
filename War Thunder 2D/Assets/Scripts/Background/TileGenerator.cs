@@ -10,6 +10,8 @@ public class TileGenerator : MonoBehaviour
     public Transform playerTransform;
     public GameObject baseTile;
 
+    public GameObject spawner;
+
     public int tileRenderRange = 2;
         
     public TileType[] tileTypes;
@@ -85,6 +87,7 @@ public class TileGenerator : MonoBehaviour
                         tile.GetComponentInChildren<BackgroundTile>().tilePosition = tileSpawn;
                         tile.GetComponentInChildren<BackgroundTile>().generator = this;
                         tile.GetComponentInChildren<BackgroundTile>().player = player;
+                        tile.GetComponentInChildren<BackgroundTile>().spawner = spawner;
                         tile.transform.SetParent(transform);
                         tiles.Add(tile);
                     }

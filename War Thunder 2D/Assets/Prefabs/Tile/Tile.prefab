@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 1738245295506196437, guid: 240427302c406f84e979abc793c02646, type: 3}
   - {fileID: 1199971382204577507, guid: ddf29c14b93b32045b2b17c3b0d159b1, type: 3}
   - {fileID: 4807148261949896784, guid: 1d2ca7ff955d45246a2c17cabdb977d4, type: 3}
+  spawner: {fileID: 5710205901835833226, guid: 548c9d59425d6344f9868ca0038ef0be, type: 3}
 --- !u!61 &3673012989772136011
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class GameRestart : MonoBehaviour
         {
             if (EventSystem.current.currentSelectedGameObject == restartButton)
             {
-                SceneManager.LoadScene("EnemyTestScene");
+                SceneManager.LoadScene("Level");
                 Destroy(canvas);
             }
             else if (EventSystem.current.currentSelectedGameObject == quitButton)

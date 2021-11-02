@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
 
     int index;
 
+    bool cutsceneFinished = false;
 
     // private variables
     private Vector2[] spawnPositions = new[]
@@ -35,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
         new Vector2(0f, 0f) //bottom
     };
 
-    private Camera cam;
+    public Camera cam;
     private bool gameStarted = false;
     private int planesDestroyed = 0;
     private int planesSpawned = 0;
@@ -44,7 +45,6 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
         StartCoroutine(StartSpawning());
     }
 
@@ -67,8 +67,7 @@ public class EnemySpawner : MonoBehaviour
         if(bomberTimer <= 0)
         {
             if(Random.value > bomberChance)
-            {
-                print("Spawn");             
+            {         
                 SpawnBomber();
                 bomberTimer = 5.0f;
             }
@@ -83,13 +82,23 @@ public class EnemySpawner : MonoBehaviour
         gameStarted = true;
         while (gameStarted)
         {
-            // spawn initial wave of enemies - decrease planes spawned to spawn more.
+            if(cutsceneFinished == false)
+            {
+                yield return new WaitForSeconds(8);
+                cutsceneFinished = true;
+            }
+            if(cutsceneFinished == true)
+            {
+                // spawn initial wave of enemies - decrease planes spawned to spawn more.
             if (planesSpawned < numPlanesSpawning && planesDestroyed + planesSpawned < numPlanesMax)
             {
                 yield return new WaitForSeconds(respawningDelay);
                 SpawnPlane();
                 planesSpawned++;
             }
+
+            }
+            
 
             yield return new WaitForSeconds(1);
         }
@@ -168,14 +177,16 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
+        print(planesDestroyed);
 
         scorescript.AddScore(100);
 
-        if (planesDestroyed < numPlanesMax)
+        if (planesDestroyed <= numPlanesMax)
         {
             planesSpawned--;
         }
-        else
+        
+        if(planesDestroyed == numPlanesMax)
         {
             if (currentWave != numWaves)
             {
@@ -184,11 +195,12 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
+                print("oh no more waves");
+                Debug.Log("Level increased");
                 // GO TO NEXT LEVEL
                 levelscript.LevelNum++;
                 numWaves = 1;
-                Debug.Log("Level increased");
-               
+                
             }
         }
     }
