@@ -21,18 +21,22 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        playerTran = player.transform;
-
-        if (player != null)
+        if(this != null)
         {
-            transform.rotation = new Quaternion(playerTran.rotation.x, playerTran.rotation.y, playerTran.rotation.z + offset, playerTran.rotation.w);
-            transform.position = player.transform.position;
-            health = player.GetComponent<PlayerHealth>();
+            rb = GetComponent<Rigidbody2D>();
+            playerTran = player.transform;
+
+            if (player != null)
+            {
+                transform.rotation = new Quaternion(playerTran.rotation.x, playerTran.rotation.y, playerTran.rotation.z + offset, playerTran.rotation.w);
+                transform.position = player.transform.position;
+                health = player.GetComponent<PlayerHealth>();
+            }
+
+            rb.velocity = transform.up * 20;
+            spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
         }
 
-        rb.velocity = transform.up * 20;
-        spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -63,14 +67,15 @@ public class Bullet : MonoBehaviour
         if ((collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBomber") && player.gameObject.tag == "Player")
         {
             Destroy(collision.gameObject);
-            Destroy(gameObject);
             spawner.EnemyDestroyed();
+            Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Player" && (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
         {
-            Destroy(gameObject);
             health = collision.GetComponent<PlayerHealth>();
-            health.TakeDamage(1f);  
+            health.TakeDamage(1.1f);
+            Destroy(gameObject);
+
         }
     }
 

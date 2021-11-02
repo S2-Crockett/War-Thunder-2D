@@ -76,8 +76,6 @@ public class Enemy : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
-
     }
     
     private void checkDirection()
@@ -253,6 +251,7 @@ public class Enemy : MonoBehaviour
                 shootDelay -= Time.deltaTime;
             }
     }
+
     private void shootBomb()
     {
             if (direction_ == 1)
@@ -267,5 +266,14 @@ public class Enemy : MonoBehaviour
             }
             bullets.GetComponent<Bullet>().player = this.gameObject;
             bullets.GetComponent<Bullet>().cam = cam;
+    }
+
+    private void DestroyEnemy()
+    {
+        //get rid of the sprite,
+
+        //then have a slight delay and spawn new sprite
+
+        Destroy(this);
     }
 }

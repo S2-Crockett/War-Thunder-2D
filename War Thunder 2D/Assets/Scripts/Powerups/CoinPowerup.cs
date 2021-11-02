@@ -11,16 +11,7 @@ public class CoinPowerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (score.ScoreNum < 1000)
-            {
-                score.ScoreNum += 500;
-                score.MyScoreText.text = "000" + score.ScoreNum;
-            }
-            else if (score.ScoreNum >= 1000)
-            {
-                score.ScoreNum += 500;
-                score.MyScoreText.text = "00" + score.ScoreNum;
-            }
+            score.AddScore(500);
             Destroy(gameObject);
         }
     }

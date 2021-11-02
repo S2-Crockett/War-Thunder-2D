@@ -78,6 +78,7 @@ public class EnemySpawner : MonoBehaviour
 
         // choose a random location , based off of the players height and spawn them
         int index = Random.Range(0, spawnPositions.Length);
+
         plane.transform.position = spawnPositions[index];
 
         if (index == 0)
@@ -97,8 +98,9 @@ public class EnemySpawner : MonoBehaviour
         }
         else if (index == 3)
         {
-            //bottom
-            plane.GetComponent<Enemy>().initialVelocity = new Vector2(0,1);
+ 
+            plane.GetComponent<Enemy>().initialVelocity = new Vector2(0, 1);
+       
         }
     }
 
@@ -106,19 +108,8 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
-        
-        // Score script
-        if (scorescript.ScoreNum > 1000)
-        {
-            scorescript.ScoreNum += 100;
-            scorescript.MyScoreText.text = "000" + scorescript.ScoreNum;
-        }
-        else if (scorescript.ScoreNum <= 1000)
-        {
-            scorescript.ScoreNum += 100;
-            scorescript.MyScoreText.text = "00" + scorescript.ScoreNum;
-        }
-        
+
+        scorescript.AddScore(100);
 
         if (planesDestroyed < numPlanesMax)
         {
@@ -133,7 +124,7 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
-                // GO TO NEXT LEVEL
+               
             }
         }
     }
