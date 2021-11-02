@@ -42,21 +42,21 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < cam.transform.position.x - 10)
+        if (transform.position.x < cam.transform.position.x - 15)
         {
             Destroy(this.gameObject);
             // once player is off the screen rotate back towards the player with a random offset and carry on in 
             // that direction
         }
-        if (transform.position.x > cam.transform.position.x + 10)
+        if (transform.position.x > cam.transform.position.x + 15)
         {
             Destroy(this.gameObject);
         }
-        if (transform.position.y < cam.transform.position.y - 8)
+        if (transform.position.y < cam.transform.position.y - 12)
         {
             Destroy(this.gameObject);
         }
-        if (transform.position.y > cam.transform.position.y + 8)
+        if (transform.position.y > cam.transform.position.y + 12)
         {
             Destroy(this.gameObject);
         }

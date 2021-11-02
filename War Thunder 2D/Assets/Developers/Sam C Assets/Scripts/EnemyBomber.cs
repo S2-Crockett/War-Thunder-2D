@@ -27,8 +27,9 @@ public class EnemyBomber : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 screenBounds;
 
-    private bool setDir = true;
 
+    private int direction_;
+    private float bomberTimer = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -40,20 +41,30 @@ public class EnemyBomber : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkDirection();
         spawningDirection();
+        BomberFire();
+
     }
     
     
     private void spawningDirection()
     {
-        if (setDir)
+        if (rb.velocity.x == 0 || rb.velocity.y == 0)
         {
-            transform.position = new Vector3(cam.transform.position.x - 20.0f, cam.transform.position.y + 20.0f, 0.0f);
-            transform.rotation = new Quaternion(90, 0, 0, 0);
-            setDir = false;
+            // x will always be 0 to head towards the player, y will have a random offset
+            if (initialVelocity.x == 1)
+            {
+                rb.velocity = new Vector2(initialVelocity.x, 0) * speed;
+                rb.rotation = -90;
+                direction_ = 1;
+            }
+            else
+            {
+                rb.velocity = new Vector2(initialVelocity.x, 0) * speed;
+                rb.rotation = 90;
+                direction_ = 2;
+            }
         }
-        rb.velocity = transform.forward;
     }
     private void checkDirection()
     {
@@ -93,16 +104,27 @@ public class EnemyBomber : MonoBehaviour
 
     private void shoot()
     {
-        if (shootDelay <= 0)
+        if (direction_ == 1)
         {
             GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().player = this.gameObject;
-            bullets.GetComponent<Bullet>().cam = cam;
-            shootDelay = 0.5f;
+            bullets.GetComponent<Bullet>().offset = 90;
         }
-        else
+        if (direction_ == 2)
         {
-            shootDelay -= Time.deltaTime;
+            GameObject bullet = Instantiate(bullets);
+            bullets.GetComponent<Bullet>().offset = -90;
+        }
+        bullets.GetComponent<Bullet>().player = this.gameObject;
+        bullets.GetComponent<Bullet>().cam = cam;
+    }
+
+    private void BomberFire()
+    {
+        bomberTimer -= 1.0f * Time.deltaTime;
+        if (bomberTimer <= 0)
+        {
+            shoot();
+            bomberTimer = 1.0f;
         }
     }
 }

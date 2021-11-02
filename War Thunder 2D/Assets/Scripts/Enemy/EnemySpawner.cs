@@ -6,12 +6,22 @@ public class EnemySpawner : MonoBehaviour
 {
     // public variables
     public GameObject enemyPlane;
+    public GameObject enemyBomber;
+    public Transform player;
+
     public int numPlanesSpawning;
     public int numPlanesMax;
     public int numWaves;
     public float respawningDelay;
     public int enemySpawnOffset = 25;
+
     public ScoreScript scorescript;
+    public NextLevel levelscript;
+
+    float bomberChance = 0.9f;
+    float bomberTimer = 5f;
+
+    int index;
 
 
     // private variables
@@ -20,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
         new Vector2(0f, 0f), //left
         new Vector2(0f, 0f), //top
         new Vector2(0f, 0f), //right
+        new Vector2(0f, 0f), //bottom
+        new Vector2(0f, 0f), //bottom
         new Vector2(0f, 0f) //bottom
     };
 
@@ -47,6 +59,23 @@ public class EnemySpawner : MonoBehaviour
         spawnPositions[1] = new Vector3(camX, camY + enemySpawnOffset, 9); // update top position
         spawnPositions[2] = new Vector3(camX + enemySpawnOffset, camY, 9); // update right position
         spawnPositions[3] = new Vector3(camX, camY - enemySpawnOffset, 9); // update bottom position
+
+        spawnPositions[4] = new Vector3(camX - enemySpawnOffset, camY + 10, 9);
+        spawnPositions[5] = new Vector3(camX + enemySpawnOffset, camY + 10, 9);
+
+        bomberTimer -= 1.0f * Time.deltaTime;
+        if(bomberTimer <= 0)
+        {
+            if(Random.value > bomberChance)
+            {
+                print("Spawn");             
+                SpawnBomber();
+                bomberTimer = 5.0f;
+            }
+        }
+
+
+
     }
 
     IEnumerator StartSpawning()
@@ -81,6 +110,17 @@ public class EnemySpawner : MonoBehaviour
 
         plane.transform.position = spawnPositions[index];
 
+        if (player.position.y < 15)
+        {
+            index = Random.Range(0, 2);
+            plane.transform.position = spawnPositions[index];
+        }
+        else
+        {
+            index = Random.Range(0, 3);
+            plane.transform.position = spawnPositions[index];
+        }
+
         if (index == 0)
         {
             //left
@@ -104,6 +144,26 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    void SpawnBomber()
+    {
+        GameObject bomber = Instantiate(enemyBomber) as GameObject;
+        bomber.GetComponent<EnemyBomber>().cam = cam;
+        bomber.GetComponent<EnemyBomber>().spawner = this;
+
+        int index = Random.Range(4, 5);
+        bomber.transform.position = spawnPositions[index];
+        if (index == 4)
+        {
+            //left
+            bomber.GetComponent<EnemyBomber>().initialVelocity = new Vector2(1, 0);
+        }
+        else if (index == 5)
+        {
+            //right
+            bomber.GetComponent<EnemyBomber>().initialVelocity = new Vector2(-1, 0);
+        }
+    }
+
     // called from the enemy when it gets destroyed to determine if we need to spawn another enemy to replace it.
     public void EnemyDestroyed()
     {
@@ -124,6 +184,10 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
+                // GO TO NEXT LEVEL
+                levelscript.LevelNum++;
+                numWaves = 1;
+                Debug.Log("Level increased");
                
             }
         }
