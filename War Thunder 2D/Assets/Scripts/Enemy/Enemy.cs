@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     private Vector3 screenBounds;
 
     private bool follow = false;
-    private float followTimer = 2.0f;
+    private float followTimer = 4.0f;
     private float bomberTimer = 1.0f;
     private Transform Target;
     private float RotationSpeed = 2.0f;
@@ -61,23 +61,6 @@ public class Enemy : MonoBehaviour
             checkForPlayer();
             chasePlayer();
         }
-        if(gameObject.tag == "EnemyBomber")
-        {
-            spawningDirectionBomber();
-            BomberFire();
-            if (transform.position.x < cam.transform.position.x - 10)
-            {
-                Destroy(this.gameObject);
-                // once player is off the screen rotate back towards the player with a random offset and carry on in 
-                // that direction
-            }
-            if (transform.position.x > cam.transform.position.x + 10)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-
-
     }
     
     private void checkDirection()
@@ -92,25 +75,25 @@ public class Enemy : MonoBehaviour
             // needs to trigger once?
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
+            followTimer = 4.0f;
         }
         if (transform.position.x > camX + enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
+            followTimer = 4.0f;
         }
         if (transform.position.y < camY - enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
+            followTimer = 4.0f;
         }
         if (transform.position.y > camY + enemyRange)
         {
             SetMovementDirection();
             RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            followTimer = 2.0f;
+            followTimer = 4.0f;
         }
         
     }
@@ -132,38 +115,6 @@ public class Enemy : MonoBehaviour
                 //this is going to be moving from top or bottom
                 rb.velocity = new Vector2(Random.Range(-0.5f, 0.5f), initialVelocity.y) * speed;
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
-            }
-        }
-    }
-    private void spawningDirectionBomber()
-    {
-
-        if (rb.velocity.x == 0 || rb.velocity.y == 0)
-        {
-            // x will always be 0 to head towards the player, y will have a random offset
-            if (initialVelocity.y == 0)
-            {
-                //this is going to be moving from left or right
-                if (setDir)
-                {
-                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
-                    setDir = false;
-                }
-                rb.velocity = new Vector3(1, 0, 0) * speed;
-                rb.rotation = -90;
-                direction_ = 1;
-            }
-            else
-            {
-                //this is going to be moving from top or bottom
-                if (setDir)
-                {
-                    rb.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 10, 0);
-                    setDir = false;
-                }
-                rb.velocity = new Vector3(-1, 0, 0) * speed;
-                rb.rotation = 90;
-                direction_ = 2;
             }
         }
     }
