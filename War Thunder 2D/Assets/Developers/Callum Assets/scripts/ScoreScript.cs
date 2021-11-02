@@ -8,6 +8,7 @@ public class ScoreScript : MonoBehaviour
     public Text MyScoreText;
     public int ScoreNum;
     public GameObject player;
+    public Text scoreResult;
 
     private bool bShouldDouble = false;
     public float power_up_duration = 4.0f;
@@ -17,6 +18,7 @@ public class ScoreScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
         ScoreNum = 0;
         MyScoreText.text = "00000" + ScoreNum;
     }

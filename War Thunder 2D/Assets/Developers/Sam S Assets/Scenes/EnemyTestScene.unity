@@ -1052,10 +1052,14 @@ PrefabInstance:
       propertyPath: MyScoreText
       value: 
       objectReference: {fileID: 456057238}
+    - target: {fileID: 2870219547828244457, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: scoreResult
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2870219547828244458, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 1312776038}
+      objectReference: {fileID: 9031411706537961121, guid: 6bd08f09b0d3f514ea31077f65556c25, type: 3}
     - target: {fileID: 2870219547828244459, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
       propertyPath: m_Name
       value: Player

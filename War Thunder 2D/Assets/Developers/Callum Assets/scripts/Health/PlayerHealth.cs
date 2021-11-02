@@ -42,10 +42,14 @@ public class PlayerHealth : MonoBehaviour
                 Die();
             }
         }
+        if (lives == 0)
+        {
+            Die();
+        }
     }
 
     public void Die()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene("LoseScene");
     }
 }
