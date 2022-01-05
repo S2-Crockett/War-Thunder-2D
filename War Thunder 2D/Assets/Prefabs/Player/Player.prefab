@@ -15,9 +15,7 @@ GameObject:
   - component: {fileID: 2870219547828244456}
   - component: {fileID: 2870219547828244460}
   - component: {fileID: 2870219547828244461}
-  - component: {fileID: 2870219547828244458}
   - component: {fileID: 2870219547828244463}
-  - component: {fileID: 2870219547828244457}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -173,6 +171,7 @@ MonoBehaviour:
   bullet: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
   player: {fileID: 2870219547828244459}
   cam: {fileID: 0}
+  shootingAudio: {fileID: 0}
 --- !u!114 &2870219547828244461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,22 +187,6 @@ MonoBehaviour:
   rotSpeed: 5
   speed: 5
   eulerAngles: {x: 0, y: 0, z: 0}
---- !u!114 &2870219547828244458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2870219547828244459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb04a10c2d0b184f815b8253a0b535b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  spawnpoint: {fileID: 0}
-  anim: {fileID: 0}
-  currentHealth: 0
 --- !u!114 &2870219547828244463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,18 +210,3 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
   - {fileID: 21300000, guid: 318016f27d65b494ba753f81784b7b72, type: 3}
   - {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
---- !u!114 &2870219547828244457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2870219547828244459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5a18ab771af2c44e9913c9312d4870d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MyScoreText: {fileID: 0}
-  ScoreNum: 0
-  player: {fileID: 2870219547828244459}

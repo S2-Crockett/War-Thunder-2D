@@ -25,7 +25,6 @@ public class Shooting : MonoBehaviour
         if(Input.GetButtonDown("Submit"))
         {
             PlayerShoot();
-            audioSource.PlayOneShot(shootingAudio, 0.5f);
         }
     }
 

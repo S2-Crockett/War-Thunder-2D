@@ -13,10 +13,9 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transform.rotation = Quaternion.Euler(0, 0, -90.0f);
     }
-
-   
-
+    
     // Update is called once per frame
     void Update()
     {

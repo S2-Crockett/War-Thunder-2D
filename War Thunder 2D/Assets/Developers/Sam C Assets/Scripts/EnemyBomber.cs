@@ -38,7 +38,6 @@ public class EnemyBomber : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
@@ -47,7 +46,6 @@ public class EnemyBomber : MonoBehaviour
     {
         spawningDirection();
         BomberFire();
-
     }
     
     
@@ -108,7 +106,6 @@ public class EnemyBomber : MonoBehaviour
 
     private void shoot()
     {
-        audioSource.PlayOneShot(shootingAudio, 0.5f);
         if (direction_ == 1)
         {
             GameObject bullet = Instantiate(bullets);
@@ -135,7 +132,6 @@ public class EnemyBomber : MonoBehaviour
 
     public void MyOwnDestroy()
     {
-        audioSource.PlayOneShot(destroyAudio, 0.5f);
         GameObject boom = Instantiate(destructionPrefab);
         spawner.AddBomberScore();
         boom.transform.position = transform.position;

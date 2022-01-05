@@ -8,11 +8,8 @@ public class BackgroundTile : MonoBehaviour
     public GameObject[] availablePowerUps;
 
     [System.NonSerialized] public Vector2 tilePosition = new Vector2();
-
     [System.NonSerialized] public TileGenerator generator;
-
     [System.NonSerialized] public GameObject player;
-
     [System.NonSerialized] public GameObject spawner;
 
     private GameObject tileObject;
@@ -27,6 +24,8 @@ public class BackgroundTile : MonoBehaviour
         _collider.enabled = false;
         this.gameObject.name = "Tile - " + tilePosition.y;
         getTileType();
+        
+        // sererate the spawn power ups into a different function that can be called from the event manager?
         SpawnPowerups();
     }
 
@@ -42,7 +41,7 @@ public class BackgroundTile : MonoBehaviour
             //ground
             setTile(1);
         }
-        else if (tilePosition.y > 0 && tilePosition.y < 120)
+        else if (tilePosition.y > 0 && tilePosition.y < 60)
         {
             //sky
             setTile(2);
@@ -58,13 +57,6 @@ public class BackgroundTile : MonoBehaviour
             setTile(4);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void setTile(int layer)
     {
         switch (layer)

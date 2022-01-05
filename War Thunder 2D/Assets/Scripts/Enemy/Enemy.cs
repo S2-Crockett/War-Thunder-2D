@@ -218,7 +218,6 @@ public class Enemy : MonoBehaviour
         audioSource.PlayOneShot(destroyAudio, 0.5f);
         GameObject boom = Instantiate(destructionPrefab);
         boom.transform.position = transform.position;
-
         Destroy(gameObject);
     }
 
