@@ -22,7 +22,7 @@ public class HealthPowerup : MonoBehaviour
         if (collision.tag == "Player")
         {
             audioSource.Play();
-            health.currentHealth = health.currentHealth + 1.1f;
+            //health.currentHealth = health.currentHealth + 1.1f;
             Destroy(gameObject);
         }
     }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -8,18 +10,13 @@ public class EnemySpawner : MonoBehaviour
     [Header("Prefabs")]
     public GameObject enemyPlane;
     public GameObject enemyBomber;
-    public Transform player;
-    public Camera cam;
     public LevelManager LevelManager;
     
     [Header("Settings")]
     public float respawningDelay;
     public int enemySpawnOffset = 25;
-
-    [Header("Scripts")]
-    public ScoreScript scorescript;
-
-    [Header("Runtime Generated")]
+    
+    [NonSerialized]
     public LevelDifficulty difficulty;
 
     private float bomberChance = 0.9f;
@@ -53,8 +50,10 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         // updates spawn positions to keep inline with the cameras
-        float camX = cam.transform.position.x;
-        float camY = cam.transform.position.y;
+        //float camX = cam.transform.position.x;
+        //float camY = cam.transform.position.y;
+        
+        /*
 
         spawnPositions[0] = new Vector3(camX - enemySpawnOffset, camY, 9); // update left position
         spawnPositions[1] = new Vector3(camX, camY + enemySpawnOffset, 9); // update top position
@@ -63,6 +62,7 @@ public class EnemySpawner : MonoBehaviour
 
         spawnPositions[4] = new Vector3(camX - enemySpawnOffset, camY + 10, 9);
         spawnPositions[5] = new Vector3(camX + enemySpawnOffset, camY + 10, 9);
+        */
 
         bomberTimer -= 1.0f * Time.deltaTime;
         if(bomberTimer <= 0)
@@ -108,14 +108,15 @@ public class EnemySpawner : MonoBehaviour
     {
         // spawn a plane and set all the default components in the enemy class
         GameObject plane = Instantiate(enemyPlane) as GameObject;
-        plane.GetComponent<Enemy>().cam = cam;
-        plane.GetComponent<Enemy>().spawner = this;
+        //plane.GetComponent<Enemy>().cam = cam;
+        //plane.GetComponent<Enemy>().spawner = this;
 
         // choose a random location , based off of the players height and spawn them
         int index = Random.Range(0, spawnPositions.Length);
 
         plane.transform.position = spawnPositions[index];
-
+        
+        /*
         if (player.position.y < 15)
         {
             index = Random.Range(0, 2);
@@ -126,6 +127,7 @@ public class EnemySpawner : MonoBehaviour
             index = Random.Range(0, 3);
             plane.transform.position = spawnPositions[index];
         }
+        */
 
         if (index == 0)
         {
@@ -146,14 +148,13 @@ public class EnemySpawner : MonoBehaviour
         {
  
             plane.GetComponent<Enemy>().initialVelocity = new Vector2(0, 1);
-       
         }
     }
 
     void SpawnBomber()
     {
         GameObject bomber = Instantiate(enemyBomber) as GameObject;
-        bomber.GetComponent<EnemyBomber>().cam = cam;
+        //bomber.GetComponent<EnemyBomber>().cam = cam;
         bomber.GetComponent<EnemyBomber>().spawner = this;
 
         int index = Random.Range(4, 5);
@@ -174,7 +175,7 @@ public class EnemySpawner : MonoBehaviour
     public void EnemyDestroyed()
     {
         planesDestroyed++;
-        scorescript.AddScore(100);
+        //scorescript.AddScore(100);
 
         if (planesDestroyed <= difficulty.maxEnemiesToSpawn)
         {
@@ -191,7 +192,7 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 print("Spawn the next level");
-                LevelManager.SpawnNextLevel();
+                //LevelManager.SpawnNextLevel();
                 resetWaves();
             }
         }
@@ -199,7 +200,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void AddBomberScore()
     {
-        scorescript.AddScore(150);
+        //scorescript.AddScore(150);
     }
 
     private void resetWaves()

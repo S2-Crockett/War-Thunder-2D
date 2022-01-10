@@ -13,8 +13,7 @@ public class ScoreScript : MonoBehaviour
     private bool bShouldDouble = false;
     public float power_up_duration = 10.0f;
     float time = 0.0f;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {

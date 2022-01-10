@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float speed;
     private Rigidbody2D rb;
     public Vector3 eulerAngles;
+    public GameState currentGameState;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         rb.velocity = transform.up * speed;
-        float angle = Mathf.Atan2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Mathf.Rad2Deg;
-        if (angle != 0)
+        if (currentGameState == GameState.Playing)
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -angle), Time.deltaTime * rotSpeed);
+            float angle = Mathf.Atan2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * Mathf.Rad2Deg;
+            if (angle != 0)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, -angle), Time.deltaTime * rotSpeed);
+            }
         }
     }
 }

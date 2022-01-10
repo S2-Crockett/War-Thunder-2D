@@ -7,10 +7,6 @@ public class LevelManager : Singleton<LevelManager>
 {
     [Header("Level Settings")] 
     public LevelDifficulty[] difficulties;
-
-    [Header("Prefabs")] 
-    public EnemySpawner spawner;
-    public Text levelText;
     
     private string currentLevelName;
     private int currentLevelIndex;
@@ -24,30 +20,18 @@ public class LevelManager : Singleton<LevelManager>
     public void SetInitialLevel()
     {
         //set the first index 
-        spawner.setLevelDifficulty(difficulties[0]);
+        EnemyManager.instance.setLevelDifficulty(difficulties[0]);
         
         //set class variables
         currentLevelIndex = difficulties[0].levelIndex;
         currentLevelName = difficulties[0].levelName;
-        
-        //update our level text
-        updateLevelText(currentLevelName);
-
     }
 
     public void SpawnNextLevel()
     {
         currentLevelIndex++;
-        spawner.setLevelDifficulty(difficulties[currentLevelIndex]);
+        EnemyManager.instance.setLevelDifficulty(difficulties[currentLevelIndex]);
         currentLevelName = difficulties[currentLevelIndex].levelName;
-        
-        //update our level text
-        updateLevelText(currentLevelName);
-    }
-
-    private void updateLevelText(string levelName)
-    {
-        levelText.text = levelName;
     }
 }
 

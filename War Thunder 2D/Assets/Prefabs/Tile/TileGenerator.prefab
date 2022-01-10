@@ -46,6 +46,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTransform: {fileID: 0}
   baseTile: {fileID: 7843685602907733474, guid: 349020a316e4dea48a3402dd24056de9, type: 3}
+  spawner: {fileID: 0}
   tileRenderRange: 2
   tileTypes:
   - tileName: Dirt

@@ -94,7 +94,7 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.tag == "Player" &&
                 (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
             {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1.1f);
+                collision.gameObject.GetComponent<PlayerHealth>().UpdateHealth(-1);
                 Destroy(gameObject);
             }
         }

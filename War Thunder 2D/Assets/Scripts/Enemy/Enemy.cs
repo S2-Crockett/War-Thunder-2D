@@ -20,11 +20,7 @@ public class Enemy : MonoBehaviour
     public AudioClip shootingAudio;
     public AudioClip destroyAudio;
     private AudioSource audioSource;
-    
-    [System.NonSerialized] 
-    public EnemySpawner spawner;
-    [System.NonSerialized] 
-    public Camera cam;
+  
     [System.NonSerialized] 
     public Vector2 initialVelocity;
 
@@ -34,7 +30,7 @@ public class Enemy : MonoBehaviour
     private bool follow = false;
     private float followTimer = 4.0f;
     private float bomberTimer = 1.0f;
-    private Transform Target;
+    private Transform target;
     private float RotationSpeed = 2.0f;
     private float distance;
 
@@ -47,6 +43,8 @@ public class Enemy : MonoBehaviour
     private float spriteTimer = 2.0f;
 
     private bool destroyed = false;
+
+    private Vector3 _playerPosition;
     
 
     RaycastHit2D hit;
@@ -56,16 +54,15 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Target = GameObject.FindWithTag("Player").transform;
-        audioSource = GetComponent<AudioSource>();
+        target = GameObject.FindWithTag("Player").transform;
         spriterenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(transform.position, Target.transform.position);
-
+        _playerPosition = GameManager.instance.playerController.transform.position;
+        distance = Vector3.Distance(transform.position, _playerPosition);
         if (gameObject.tag == "Enemy")
         {
             checkDirection();
@@ -79,39 +76,38 @@ public class Enemy : MonoBehaviour
 
     private void checkDirection()
     {
-        if (cam)
-        {
-            float camX = cam.transform.position.x;
-            float camY = cam.transform.position.y;
+        
+            float playerX = _playerPosition.x;
+            float playerY = _playerPosition.y;
 
             //Change to just redirect enemies to a different position once off the screen.
             //once player is off the screen rotate back towards the player with a random offset and carry on in 
-            if (transform.position.x < camX - enemyRange)
+            if (transform.position.x < playerX - enemyRange)
             {
                 // needs to trigger once?
                 SetMovementDirection();
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
                 followTimer = 4.0f;
             }
-            if (transform.position.x > camX + enemyRange)
+            if (transform.position.x > playerX + enemyRange)
             {
                 SetMovementDirection();
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
                 followTimer = 4.0f;
             }
-            if (transform.position.y < camY - enemyRange)
+            if (transform.position.y < playerY - enemyRange)
             {
                 SetMovementDirection();
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
                 followTimer = 4.0f;
             }
-            if (transform.position.y > camY + enemyRange)
+            if (transform.position.y > playerY + enemyRange)
             {
                 SetMovementDirection();
                 RotateToTarget(new Vector2(rb.velocity.x, rb.velocity.y));
                 followTimer = 4.0f;
             }
-        }
+        
         
     }
 
@@ -150,7 +146,7 @@ public class Enemy : MonoBehaviour
 
     private void SetMovementDirection()
     {
-        Vector2 camPos = new Vector2(cam.transform.position.x, cam.transform.position.y);
+        Vector2 camPos = new Vector2(_playerPosition.x, _playerPosition.y);
         Vector2 enemyPos = new Vector2(transform.position.x, transform.position.y);
         
         //lerp from current movement direction to new movement direction
@@ -181,7 +177,7 @@ public class Enemy : MonoBehaviour
 
     private void chasePlayer()
     {
-        direction = Target.position - transform.position;
+        direction = _playerPosition - transform.position;
         float angle = math.atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90.0f;
         Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
         if (follow)
@@ -198,6 +194,7 @@ public class Enemy : MonoBehaviour
 
     private void shoot()
     {
+        /*
         if (shootDelay <= 0)
         {
             //audioSource.PlayOneShot(shootingAudio, 0.5f);
@@ -211,11 +208,11 @@ public class Enemy : MonoBehaviour
         {
             shootDelay -= Time.deltaTime;
         }
+        */
     }
 
     public void MyOwnDestroy()
     {
-        audioSource.PlayOneShot(destroyAudio, 0.5f);
         GameObject boom = Instantiate(destructionPrefab);
         boom.transform.position = transform.position;
         Destroy(gameObject);

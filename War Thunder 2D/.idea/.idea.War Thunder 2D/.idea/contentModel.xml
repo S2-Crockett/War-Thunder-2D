@@ -55,20 +55,26 @@
           <e p="Level" t="Include">
             <e p="LevelManager.cs" t="Include" />
           </e>
+          <e p="Player" t="Include">
+            <e p="PlayerHealth.cs" t="Include" />
+          </e>
           <e p="Powerups" t="Include">
             <e p="CoinPowerup.cs" t="Include" />
-            <e p="Doublepoints.cs" t="Include" />
+            <e p="DoublePointsPowerup.cs" t="Include" />
             <e p="HealthPowerup.cs" t="Include" />
           </e>
           <e p="Sounds" t="Include">
             <e p="SoundManager.cs" t="Include" />
-            <e p="UISounds.cs" t="Include" />
           </e>
           <e p="UI" t="Include">
-            <e p="LevelNumberScript.cs" t="Include" />
-            <e p="Menu.cs" t="Include" />
-            <e p="NextLevel.cs" t="Include" />
+            <e p="UIEnemy.cs" t="Include" />
+            <e p="UIHealth.cs" t="Include" />
             <e p="UIManager.cs" t="Include" />
+            <e p="UINotifcation.cs" t="Include" />
+            <e p="UIPowerCooldown.cs" t="Include" />
+            <e p="UIPowerNotifcation.cs" t="Include" />
+            <e p="UIScore.cs" t="Include" />
+            <e p="UIWave.cs" t="Include" />
           </e>
         </e>
       </e>

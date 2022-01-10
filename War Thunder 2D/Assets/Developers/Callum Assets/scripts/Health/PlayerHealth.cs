@@ -6,37 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private float startingHealth;
-    public Transform spawnpoint;
-    public PlayableDirector anim;
-    public float currentHealth;
-
+    [Header("Settings")] 
+    public int health;
 
     private void Awake()
     {
-        currentHealth = startingHealth;
+        UIManager.instance.healthUI.UpdateHealth(health);
     }
-
-
-    public void TakeDamage(float _damage)
+    
+    public void UpdateHealth(int amount)
     {
-        if (anim.state != PlayState.Playing)
+        health += amount;
+        if (health <= 0)
         {
-            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-            if (currentHealth > 1)
-            {
-                //player hurt
-            }
-            else
-            {
-                Die();
-            }
+            UIManager.instance.healthUI.UpdateHealth(health);
+            Die();
+        }
+        else
+        {
+            UIManager.instance.healthUI.UpdateHealth(health);
         }
     }
 
     public void Die()
     {
-        SceneManager.LoadScene("LoseScene");
+        GameManager.instance.UpdateGameState(GameState.Lose);
     }
 
 

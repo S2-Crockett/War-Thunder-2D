@@ -6,24 +6,52 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     public GameState state;
+    
+    [Header("References")] 
+    public GameObject playerController;
+
+    [Header("PlayerStats")] 
+    public int playerScore;
+    public int enemysDestroyed;
+
+    private PlayerMovement _playerMovement;
+    
     private void Start()
     {
-        UpdateGameState(GameState.Intro);
+        UpdateGameState(GameState.Menu);
+        _playerMovement = playerController.GetComponent<PlayerMovement>();
+        _playerMovement.currentGameState = state;
     }
-    
+
+    private void Update()
+    {
+        switch (state)
+        {
+            case GameState.Menu:
+                if (Input.GetButtonDown("Submit"))
+                {
+                    UpdateGameState(GameState.Playing);
+                }
+                break;
+            case GameState.Playing:
+                break;
+            case GameState.Lose:
+                break;
+        }
+    }
+
+    public void UpdateScore(int amount)
+    {
+        UIManager.instance.scoreUI.UpdateScore(amount);
+    }
+
     public void UpdateGameState(GameState newState)
     {
         state = newState;
         switch (newState)
         {
-            case GameState.Intro:
-                HandleIntroState();
-                break;
             case GameState.Menu:
-                HandleIntroState();
-                break;
-            case GameState.BeginPlaying:
-                HandleBeginPlayState();
+                HandleMenuState();
                 break;
             case GameState.Playing:
                 HandlePlayingState();
@@ -36,37 +64,21 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    private void HandleIntroState()
-    {
-        //enable intro ui
-        //display intro part of the ui
-        
-        // plane movement starts along x axis.. (flying side ways)
-        // set menu state.
-    }
-
     private void HandleMenuState()
     {
-        //enable menu ui
-        //display menu ui
-        
         //allow input to select name
+        //input to select game type?
     }
-
-    private void HandleBeginPlayState()
-    {
-        //disable menu ui
-        //start countdown timer.
-        //when count down is finished move to play state 
-    }
-
+    
     private void HandlePlayingState()
     {
-        //enable in game ui
-        //display in game ui
+        _playerMovement.currentGameState = GameState.Playing;
+        UIManager.instance.EnableMenuHUD(false);
+        UIManager.instance.EnableGameHUD(true);
         
-        //allow input 
-        //start spawning enemies
+        EnemyManager.instance.currentGameState = GameState.Playing;
+        StartCoroutine(EnemyManager.instance.StartSpawningEnemy());
+        //update score.. 
     }
 
     private void HandleLoseState()
@@ -78,9 +90,7 @@ public class GameManager : Singleton<GameManager>
 //States that are present throughout gameplay.
 public enum GameState
 {
-    Intro,
     Menu,
-    BeginPlaying,
     Playing,
     Lose
 }
