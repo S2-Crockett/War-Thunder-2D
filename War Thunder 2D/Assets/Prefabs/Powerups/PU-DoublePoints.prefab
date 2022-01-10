@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8815871841355137840}
   - component: {fileID: 4633920714063967351}
   - component: {fileID: 1832427052715754757}
-  - component: {fileID: 3622596948704025865}
+  - component: {fileID: 8975817632285180543}
   m_Layer: 0
   m_Name: PU-DoublePoints
   m_TagString: Double
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &3622596948704025865
+--- !u!114 &8975817632285180543
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4807148261949896784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e223998527999134cb1ba8bfd7d74d98, type: 3}
+  m_Script: {fileID: 11500000, guid: bd87d4d9eaa6b0e4e82348fe810f19d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 2870219547828244457, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
-  powerupClip: {fileID: 8300000, guid: f59cd953dd04ce34491c6ee653a04f0d, type: 3}
+  powerupTime: 10
+  powerupClip: {fileID: 0}

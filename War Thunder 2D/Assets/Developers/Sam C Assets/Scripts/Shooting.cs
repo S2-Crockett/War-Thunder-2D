@@ -29,12 +29,4 @@ public class Shooting : MonoBehaviour
         }
         */
     }
-
-    private void PlayerShoot()
-    {
-        GameObject bullets = Instantiate(bullet);
-        bullets.GetComponent<Bullet>().offset = 0;
-        bullets.GetComponent<Bullet>().player = player;
-        bullets.GetComponent<Bullet>().cam = cam;
-    }
 }

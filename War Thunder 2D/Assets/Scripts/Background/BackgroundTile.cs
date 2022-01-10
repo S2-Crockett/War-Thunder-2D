@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BackgroundTile : MonoBehaviour
 {
@@ -122,7 +124,6 @@ public class BackgroundTile : MonoBehaviour
                 if (powerUp.tag == "Heart")
                 {
                     GameObject heart = Instantiate(powerUp, GetRandomLocationInRange(), Quaternion.Euler(0, 0, 0));
-                    heart.GetComponent<HealthPowerup>().health = player.GetComponent<PlayerHealth>();
                     heart.transform.SetParent(this.transform);
                 }
                 else if (powerUp.tag == "Coin")
@@ -160,17 +161,16 @@ public class BackgroundTile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Destroy(collision.gameObject);
+            Debug.Log("Player Entered");
         }
         else if(collision.tag == "Enemy")
         {
-            spawner.GetComponent<EnemySpawner>().EnemyDestroyed();
-            collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
+            collision.gameObject.GetComponent<EnemyHealth>().UpdateHealth(-1);
         }
-        
-        // need something for powerups here as well..
     }
+
     
+
     private void SpawnTrees()
     {
         float startHeight = treeHeight;

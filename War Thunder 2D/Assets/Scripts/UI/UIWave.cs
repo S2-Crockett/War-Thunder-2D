@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIWave : MonoBehaviour
 {
+    [Header("References")] 
+    public Text levelText;
     // Start is called before the first frame update
-    void Start()
+    
+    public void UpdateLevel(int wave, int level)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        levelText.text = wave.ToString() + " - " + level.ToString();
     }
 }

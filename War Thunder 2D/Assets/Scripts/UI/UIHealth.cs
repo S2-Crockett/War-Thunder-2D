@@ -12,7 +12,7 @@ public class UIHealth : MonoBehaviour
     
     public void UpdateHealth(int amount)
     {
-        healthAmount += amount;
+        healthAmount = amount;
         healthText.text = healthAmount.ToString();
     }
 }

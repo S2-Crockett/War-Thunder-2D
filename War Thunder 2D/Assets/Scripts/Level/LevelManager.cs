@@ -23,7 +23,7 @@ public class LevelManager : Singleton<LevelManager>
         EnemyManager.instance.setLevelDifficulty(difficulties[0]);
         
         //set class variables
-        currentLevelIndex = difficulties[0].levelIndex;
+        currentLevelIndex = 0;
         currentLevelName = difficulties[0].levelName;
     }
 

@@ -6,24 +6,21 @@ using UnityEngine;
 
 public class HealthPowerup : MonoBehaviour
 {
-    [System.NonSerialized]
-    public PlayerHealth health;
     
+    [Header("Audio")]
     public AudioClip powerupClip;
-    private AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            audioSource.Play();
-            //health.currentHealth = health.currentHealth + 1.1f;
+            EventManager.instance.UpdatePlayerHealth(1);
             Destroy(gameObject);
         }
+    }
+    
+    private void Update()
+    {
+        transform.Translate(((transform.up * -1) * 3 * Time.deltaTime));
     }
 }

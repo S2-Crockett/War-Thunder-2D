@@ -14,7 +14,7 @@ public class EnemyManager : Singleton<EnemyManager>
     
     [Header("Settings")]
     public float respawningDelay;
-    public int enemySpawnOffset = 25;
+    public int enemySpawnOffset = 17;
     
     [NonSerialized] public LevelDifficulty currentDifficulty;
     [NonSerialized] public GameState currentGameState;
@@ -96,15 +96,17 @@ public class EnemyManager : Singleton<EnemyManager>
         
         // calculate a random position for the enemy to spawn
         int index = Random.Range(0, _enemySpawnPositions.Length);
+        plane.transform.position = _enemySpawnPositions[index];
         
         // if the plane is positioned to low then only enable spawning on (top,left,right)
-        if (_playerPosition.y < 25)
+        if (_playerPosition.y < 35)
         {
             index = Random.Range(0, 2);
             plane.transform.position = _enemySpawnPositions[index];
         }
         else
         {
+            index = Random.Range(0, 3);
             plane.transform.position = _enemySpawnPositions[index];
         }
 
@@ -133,7 +135,7 @@ public class EnemyManager : Singleton<EnemyManager>
     public void EnemyDestroyed()
     {
         _enemiesDestroyed++;
-        UIManager.instance.enemyUI.UpdateEnemyAmount(-1);
+        UIManager.instance.enemyUI.DecreaseEnemyAmount(1);
         GameManager.instance.UpdateScore(100);
 
         if (_enemiesDestroyed <= currentDifficulty.maxEnemiesToSpawn)
@@ -147,11 +149,12 @@ public class EnemyManager : Singleton<EnemyManager>
             {
                 _enemiesDestroyed = 0;
                 _currentEnemyWave++;
-                //update waves ui
+                UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
+                UIManager.instance.notificationUI.SetNotification("NEW WAVE SPAWNING", 2.0f);
             }
             else
             {
-                //LevelManager.instance.SpawnNextLevel();
+                LevelManager.instance.SpawnNextLevel();
                 resetWaves();
             }
         }
@@ -160,16 +163,21 @@ public class EnemyManager : Singleton<EnemyManager>
     public void setLevelDifficulty(LevelDifficulty difficulty)
     {
         currentDifficulty = difficulty;
-        
         // when a new level begins, calculate the max number of enemies that can spawn
         // then update the ui 
-        int totalEnemies = currentDifficulty.maxEnemiesToSpawn * currentDifficulty.numberOfWaves;
-        UIManager.instance.enemyUI.UpdateEnemyAmount(totalEnemies);
+        int totalEnemies = currentDifficulty.maxEnemiesToSpawn * (currentDifficulty.numberOfWaves + 1);
+        UIManager.instance.enemyUI.SetEnemyAmount(totalEnemies);
+        UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
     }
     private void resetWaves()
     {
         _enemiesSpawned = 0;
         _enemiesDestroyed = 0;
         _currentEnemyWave = 0;
+        
+        UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
+        UIManager.instance.notificationUI.SetNotification("NEW ROUND", 2.0f);
+        //update wave stuff here.
+        //level index
     }
 }

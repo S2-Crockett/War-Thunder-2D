@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpriteChange : MonoBehaviour
 {
-
     public enum Rotation
     {
         NORTH,

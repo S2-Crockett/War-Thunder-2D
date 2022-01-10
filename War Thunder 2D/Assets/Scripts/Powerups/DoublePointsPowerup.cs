@@ -18,5 +18,10 @@ public class DoublePointsPowerup: MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
+    private void Update()
+    {
+        transform.Translate(((transform.up * -1) * 3 * Time.deltaTime));
+    }
 
 }

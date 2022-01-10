@@ -20,75 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf43830-f505-46bc-953e-495773d67e4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/EnemyDestroyed.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/EnemyDestroyed.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/EnemyShoot.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/EnemyShoot.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/HealthIncrease.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/HealthIncrease.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/Pickup Coin.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/Pickup Coin.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/PlaneEngine.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/PlaneEngine.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/PlayerShoot.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/PlayerShoot.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/Powerup.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/Powerup.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/TakeDamage.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Audio/TakeDamage.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Prefabs/Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Prefabs/Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBomber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBomber.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/newPlaneSprite4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/newPlaneSprite4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/SpriteChange.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpriteChange.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/SpriteChange.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/SpriteChange.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Main Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Main Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-DoublePoints.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-DoublePoints.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-Health.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-Health.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-Score.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Powerups/PU-Score.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tile/Tile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile/Tile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Tile/TileGenerator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Tile/TileGenerator.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LevelNumberScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LevelNumberScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Menu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NextLevel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/NextLevel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_DIRT.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_DIRT.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_GROUND.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_GROUND.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_SKY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_SKY.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_SPACE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_SPACE.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_TRANSITION.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Tiles/TILE_TRANSITION.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Untitled-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/Untitled-2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/WT-LOGO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Textures/WT-LOGO.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIEnemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIWave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIWave.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +64,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -107,32 +72,40 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Singleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Sounds/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Lewis Assets/Scripts/deployPlanes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIEnemy.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIScore.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/SpriteChange.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIEnemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBomber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIWave.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerBullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" />
       </list>
     </option>
   </component>
@@ -192,7 +165,8 @@
       <workItem from="1641394433571" duration="14197000" />
       <workItem from="1641471784037" duration="1276000" />
       <workItem from="1641577816193" duration="1706000" />
-      <workItem from="1641644222637" duration="26932000" />
+      <workItem from="1641644222637" duration="39889000" />
+      <workItem from="1641838329234" duration="5997000" />
     </task>
     <servers />
   </component>
@@ -217,11 +191,15 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog" timestamp="1641770371715">
+    <state x="1445" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1641826626634">
+      <screen x="0" y="0" width="2293" height="929" />
+    </state>
+    <state x="1445" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2293.929@0.0.2293.929" timestamp="1641826626634" />
+    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog" timestamp="1641841472172">
       <screen x="0" y="0" width="2293" height="929" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1635599974614" />
-    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog/0.0.2293.929@0.0.2293.929" timestamp="1641770371715" />
+    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog/0.0.2293.929@0.0.2293.929" timestamp="1641841472172" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1634650896100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

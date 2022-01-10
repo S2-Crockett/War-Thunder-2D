@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EventManager : Singleton<EventManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Player")] 
+    public PlayerHealth playerHealth;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdatePlayerHealth(int amount)
     {
-        
+        playerHealth.UpdateHealth(amount);
     }
+    
 }

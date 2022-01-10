@@ -15,12 +15,10 @@ public class Enemy : MonoBehaviour
     public float viewDistance = 4.3f;
     public float shootDelay = 0.5f;
 
-    [Header("Extras")]
+    [Header("References")]
     public GameObject bullets;
-    public AudioClip shootingAudio;
     public AudioClip destroyAudio;
-    private AudioSource audioSource;
-  
+    
     [System.NonSerialized] 
     public Vector2 initialVelocity;
 
@@ -72,8 +70,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
+    
     private void checkDirection()
     {
         
@@ -110,8 +107,7 @@ public class Enemy : MonoBehaviour
         
         
     }
-
-
+    
     private void spawningDirection()
     {
         if (rb.velocity.x == 0 || rb.velocity.y == 0)
@@ -191,7 +187,8 @@ public class Enemy : MonoBehaviour
             follow = false;
         }
     }
-
+    
+    
     private void shoot()
     {
         /*
@@ -210,12 +207,4 @@ public class Enemy : MonoBehaviour
         }
         */
     }
-
-    public void MyOwnDestroy()
-    {
-        GameObject boom = Instantiate(destructionPrefab);
-        boom.transform.position = transform.position;
-        Destroy(gameObject);
-    }
-
 }

@@ -14,13 +14,13 @@ public class GameManager : Singleton<GameManager>
     public int playerScore;
     public int enemysDestroyed;
 
-    private PlayerMovement _playerMovement;
+    private PlayerController _playerMovement;
     
     private void Start()
     {
         UpdateGameState(GameState.Menu);
-        _playerMovement = playerController.GetComponent<PlayerMovement>();
-        _playerMovement.currentGameState = state;
+        _playerMovement = playerController.GetComponent<PlayerController>();
+        _playerMovement._currentGameState = state;
     }
 
     private void Update()
@@ -66,13 +66,12 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleMenuState()
     {
-        //allow input to select name
-        //input to select game type?
+        //allow input to select game type
     }
     
     private void HandlePlayingState()
     {
-        _playerMovement.currentGameState = GameState.Playing;
+        _playerMovement._currentGameState = GameState.Playing;
         UIManager.instance.EnableMenuHUD(false);
         UIManager.instance.EnableGameHUD(true);
         
@@ -83,7 +82,7 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleLoseState()
     {
-        
+        //shows stats, enter loops back to menu state
     }
 }
 
