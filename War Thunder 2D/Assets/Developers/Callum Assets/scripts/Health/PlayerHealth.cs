@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,37 @@ public class PlayerHealth : MonoBehaviour
     public Transform spawnpoint;
     public PlayableDirector anim;
     public float currentHealth;
+    private SpriteRenderer spriteRenderer;
+    public Sprite[] Explosions;
+    public float timer = 1f;
 
+    public bool die = false;
 
-    private void Awake()
+    public enum Dead
     {
-        currentHealth = startingHealth;
+        ONE,
+        TWO,
+        THREE,
+        FOUR,
+        DEAD
     }
 
+    public Dead dead;
+    private void Awake()
+    {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        currentHealth = startingHealth;
+        dead = Dead.ONE;
+    }
+
+    private void Update()
+    {
+        if (die)
+        {
+            GetComponent<SpriteChange>().enabled = false;
+            Die();
+        }
+    }
 
     public void TakeDamage(float _damage)
     {
@@ -29,15 +54,65 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                Die();
+                die = true;
             }
         }
     }
 
     public void Die()
     {
-        SceneManager.LoadScene("LoseScene");
+        switch (dead)
+        {
+            case Dead.ONE:
+            {
+                transform.localScale = new Vector3(2f, 2f, 2f);
+                spriteRenderer.sprite = Explosions[0];
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    timer = 0.5f;
+                    dead = Dead.TWO;
+                }
+                break;
+            }
+            case Dead.TWO:
+            {
+                spriteRenderer.sprite = Explosions[1];
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    timer = 0.5f;
+                    dead = Dead.THREE;
+                }
+                break;
+            }
+            case Dead.THREE:
+            {
+                spriteRenderer.sprite = Explosions[2];
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    timer = 0.5f;
+                    dead = Dead.FOUR;
+                }
+                break;
+            }
+            case Dead.FOUR:
+            {
+                spriteRenderer.sprite = Explosions[3];
+                timer -= Time.deltaTime;
+                if (timer <= 0)
+                {
+                    timer = 0.5f;
+                    dead = Dead.DEAD;
+                }
+                break;
+            }
+            case Dead.DEAD:
+            {
+                SceneManager.LoadScene("LoseScene");
+                break;
+            }
+        }
     }
-
-
 }
