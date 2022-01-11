@@ -87,15 +87,14 @@ public class Bullet : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<EnemyBomber>().MyOwnDestroy();
                 }
-
                 Destroy(gameObject);
             }
 
             if (collision.gameObject.tag == "Player" &&
                 (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
             {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1.1f);
                 Destroy(gameObject);
+                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1f);
             }
         }
       

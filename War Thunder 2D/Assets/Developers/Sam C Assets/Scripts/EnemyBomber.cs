@@ -108,19 +108,25 @@ public class EnemyBomber : MonoBehaviour
 
     private void shoot()
     {
-        audioSource.PlayOneShot(shootingAudio, 0.5f);
-        if (direction_ == 1)
+        if (transform.position.y < cam.transform.position.y + 10 && 
+            transform.position.y > cam.transform.position.y - 2)
         {
-            GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().offset = 90;
+            audioSource.PlayOneShot(shootingAudio, 0.5f);
+            if (direction_ == 1)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullets.GetComponent<Bullet>().offset = 90;
+            }
+
+            if (direction_ == 2)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullets.GetComponent<Bullet>().offset = -90;
+            }
+
+            bullets.GetComponent<Bullet>().player = this.gameObject;
+            bullets.GetComponent<Bullet>().cam = cam;
         }
-        if (direction_ == 2)
-        {
-            GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().offset = -90;
-        }
-        bullets.GetComponent<Bullet>().player = this.gameObject;
-        bullets.GetComponent<Bullet>().cam = cam;
     }
 
     private void BomberFire()

@@ -23,7 +23,7 @@ public class PlayerHealth : MonoBehaviour
         if (anim.state != PlayState.Playing)
         {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-            if (currentHealth > 1)
+            if (currentHealth > 0)
             {
                 //player hurt
             }
