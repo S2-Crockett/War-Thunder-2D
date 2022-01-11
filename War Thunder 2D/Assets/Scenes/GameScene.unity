@@ -260,13 +260,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae4c6c11e8e7f644a380fb6bf0efbe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPlane: {fileID: 2038220995171172398, guid: 25020a55c02b29c4696dce6fead8f6bd, type: 3}
-  numPlanesSpawning: 5
-  numPlanesMax: 10
-  numWaves: 0
+  enemyPlane: {fileID: 2038220995171172398, guid: 0a2888e03527e3a4a8cff8999076d4b2, type: 3}
+  enemyBomber: {fileID: 2038220995171172398, guid: 2d575bc39908cb04989c769fbe90f0db, type: 3}
+  player: {fileID: 2016660240}
+  cam: {fileID: 2104101583}
+  LevelManager: {fileID: 0}
   respawningDelay: 1
   enemySpawnOffset: 9
   scorescript: {fileID: 2016660246}
+  difficulty:
+    levelName: 
+    levelIndex: 0
+    enemiesOnScreen: 0
+    maxEnemiesToSpawn: 0
+    numberOfWaves: 0
 --- !u!4 &45307854
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,8 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: {fileID: 2016660246}
-  power_up_duration: 5
-  time: 0
+  powerupClip: {fileID: 0}
 --- !u!61 &838464147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2580,6 +2586,9 @@ MonoBehaviour:
   rotSpeed: 5
   speed: 5
   eulerAngles: {x: 0, y: 0, z: 0}
+  timer: 0.1
+  timer2: 0.2
+  dead: 0
 --- !u!114 &2016660238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2596,6 +2605,7 @@ MonoBehaviour:
   bullet: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
   player: {fileID: 2016660236}
   cam: {fileID: 2104101583}
+  shootingAudio: {fileID: 0}
 --- !u!212 &2016660239
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2699,6 +2709,14 @@ MonoBehaviour:
   spawnpoint: {fileID: 1877783789}
   anim: {fileID: 633049574}
   currentHealth: 0
+  Explosions:
+  - {fileID: 21300000, guid: 25b267de20d22c342b6ae0b7115e15ba, type: 3}
+  - {fileID: 21300000, guid: e95f951916075eb4ea3d8d7759d7404c, type: 3}
+  - {fileID: 21300000, guid: c140061f84866f840a86a1eaca7f6ab3, type: 3}
+  - {fileID: 21300000, guid: 70808e3fe7ca5f842bb9bcfa3dce4640, type: 3}
+  timer: 1
+  die: 0
+  dead: 0
 --- !u!114 &2016660243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2783,6 +2801,7 @@ MonoBehaviour:
   ScoreNum: 0
   player: {fileID: 2016660236}
   scoreResult: {fileID: 2134618666}
+  power_up_duration: 10
 --- !u!1 &2033418669
 GameObject:
   m_ObjectHideFlags: 0
