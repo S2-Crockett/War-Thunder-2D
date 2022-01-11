@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class SoundManager : Singleton<GameManager>
+public class SoundManager : Singleton<SoundManager>
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Audio")] 
+    public AudioSource effectSource;
+    public AudioSource playerSource;
 
-    // Update is called once per frame
-    void Update()
+    public void PlayPlayerOneShot(AudioClip clip)
     {
-        
+        playerSource.PlayOneShot(clip);
+    }
+    public void PlayEffectOneShot(AudioClip clip)
+    {
+        effectSource.PlayOneShot(clip);
     }
 }

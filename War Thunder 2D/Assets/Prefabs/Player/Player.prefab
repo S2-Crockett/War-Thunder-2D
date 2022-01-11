@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: f6f0ff215a24bd6449cb3316c91de3ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 5
-  speed: 5
+  speed: 6
   spriteArray:
   - {fileID: 21300000, guid: 89d431c3b28dc0f469e88e9615a489e0, type: 3}
   - {fileID: 21300000, guid: f8540fa1f005a194c9d1babb37a67471, type: 3}
@@ -172,4 +172,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
   bullet: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
   bulletSpeed: 40
-  shootingAudio: {fileID: 0}
+  shootingAudio: {fileID: 8300000, guid: 43ffbede8a9ab6b45b6b01d14d005322, type: 3}

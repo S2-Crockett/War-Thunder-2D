@@ -12,11 +12,13 @@ public class Enemy : MonoBehaviour
     public float enemyRange = 15f;
 
     [Header("Behaviour")] 
-    public float viewDistance = 4.3f;
+    public float viewDistance = 20.0f;
+    
+    [Header("Weapon")]
+    public GameObject bullet;
     public float shootDelay = 0.5f;
-
-    [Header("References")]
-    public GameObject bullets;
+    
+    [Header("Sounds")]
     public AudioClip destroyAudio;
     
     [System.NonSerialized] 
@@ -25,35 +27,29 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private Vector3 screenBounds;
 
-    private bool follow = false;
+    private bool follow;
     private float followTimer = 4.0f;
     private float bomberTimer = 1.0f;
-    private Transform target;
     private float RotationSpeed = 2.0f;
     private float distance;
 
     private Quaternion lookRotation;
     private Vector3 direction;
     private int direction_;
-
-    private SpriteRenderer spriterenderer;
-    public GameObject destructionPrefab;
-    private float spriteTimer = 2.0f;
-
-    private bool destroyed = false;
-
-    private Vector3 _playerPosition;
     
-
+    public GameObject destructionPrefab;
+    
+    private float spriteTimer = 2.0f;
+    private bool destroyed = false;
+    private Vector3 _playerPosition;
     RaycastHit2D hit;
-
     private bool setDir = true;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindWithTag("Player").transform;
-        spriterenderer = GetComponent<SpriteRenderer>();
+
     }
 
     // Update is called once per frame
@@ -61,20 +57,17 @@ public class Enemy : MonoBehaviour
     {
         _playerPosition = GameManager.instance.playerController.transform.position;
         distance = Vector3.Distance(transform.position, _playerPosition);
-        if (gameObject.tag == "Enemy")
-        {
-            checkDirection();
-            spawningDirection();
-            checkForPlayer();
-            chasePlayer();
-        }
+        
+        checkDirection();
+        spawningDirection();
+        checkForPlayer();
+        chasePlayer();
     }
 
     
     private void checkDirection()
     {
-        
-            float playerX = _playerPosition.x;
+        float playerX = _playerPosition.x;
             float playerY = _playerPosition.y;
 
             //Change to just redirect enemies to a different position once off the screen.
@@ -155,12 +148,12 @@ public class Enemy : MonoBehaviour
 
     private void checkForPlayer()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), viewDistance, 11);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 200, 11);
         if (hit.collider != null && hit.collider.tag == "Player")
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * viewDistance, Color.yellow);
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * viewDistance, Color.red);
             shoot();
-            if (distance <= 10.0f)
+            if (distance <= 15.0f)
             {
                 follow = true;
             }
@@ -191,20 +184,17 @@ public class Enemy : MonoBehaviour
     
     private void shoot()
     {
-        /*
         if (shootDelay <= 0)
         {
             //audioSource.PlayOneShot(shootingAudio, 0.5f);
-            GameObject bullet = Instantiate(bullets);
-            bullet.GetComponent<Bullet>().offset = 0;
-            bullet.GetComponent<Bullet>().player = this.gameObject;
-            bullet.GetComponent<Bullet>().cam = cam;
+            GameObject bullets = Instantiate(bullet);
+            bullets.AddComponent<EnemyBullet>().owner = gameObject;
+            bullets.AddComponent<EnemyBullet>().direction = transform.up;
             shootDelay = 0.5f;
         }
         else
         {
             shootDelay -= Time.deltaTime;
         }
-        */
     }
 }

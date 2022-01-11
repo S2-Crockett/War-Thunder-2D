@@ -11,7 +11,6 @@
             <e p="Scripts" t="Include">
               <e p="Health" t="Include">
                 <e p="HealthBar.cs" t="Include" />
-                <e p="PlayerHealth.cs" t="Include" />
               </e>
               <e p="landcollision.cs" t="Include" />
               <e p="ScoreScript.cs" t="Include" />
@@ -39,10 +38,14 @@
             <e p="BackgroundTile.cs" t="Include" />
             <e p="TileGenerator.cs" t="Include" />
           </e>
+          <e p="Bullets" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="EnemyBullet.cs" t="Include" />
+            <e p="PlayerBullet.cs" t="Include" />
+          </e>
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />
             <e p="EnemyBomber.cs" t="Include" />
-            <e p="EnemyBullet.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="EnemyManager.cs" t="Include" />
           </e>
@@ -56,7 +59,6 @@
             <e p="LevelManager.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
-            <e p="PlayerBullet.cs" t="Include" />
             <e p="PlayerController.cs" t="Include" />
             <e p="PlayerHealth.cs" t="Include" />
           </e>
@@ -79,6 +81,7 @@
             <e p="UIWave.cs" t="Include" />
           </e>
         </e>
+        <e p="UIGameOver.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

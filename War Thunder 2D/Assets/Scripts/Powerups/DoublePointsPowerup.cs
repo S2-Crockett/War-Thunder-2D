@@ -14,7 +14,10 @@ public class DoublePointsPowerup: MonoBehaviour
     {
         if(collision.tag == "Player")
         {
+            SoundManager.instance.PlayEffectOneShot(powerupClip);
             UIManager.instance.scoreUI.ActiveDoubleScore(powerupTime);
+            UIManager.instance.cooldownUI.StartDoublePointsCooldown(powerupTime);
+            UIManager.instance.powerNoticationUI.SetNotification("DOUBLE POINTS ACTIVATED", 2.0f);
             Destroy(gameObject);
         }
     }

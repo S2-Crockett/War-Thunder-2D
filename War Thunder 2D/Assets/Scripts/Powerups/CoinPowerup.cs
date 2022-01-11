@@ -7,16 +7,14 @@ public class CoinPowerup : MonoBehaviour
 {
     [Header("Audio")]
     public AudioClip powerupClip;
-
-    private void Start()
-    {
-    }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            SoundManager.instance.PlayEffectOneShot(powerupClip);
             GameManager.instance.UpdateScore(1000);
+            UIManager.instance.powerNoticationUI.SetNotification("1000 SCORE COLLECTED", 2.0f);
             Destroy(gameObject);
         }
     }

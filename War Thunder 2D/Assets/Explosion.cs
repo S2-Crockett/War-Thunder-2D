@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-
+    [Header("Audio")] 
+    public AudioClip explosionClip;
+    
     private float timer = 1.0f;
     private bool Active = false;
 
     private void Start()
     {
+        SoundManager.instance.PlayEffectOneShot(explosionClip);
         Active = true;
     }
 

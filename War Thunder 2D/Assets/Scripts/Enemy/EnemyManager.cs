@@ -56,10 +56,10 @@ public class EnemyManager : Singleton<EnemyManager>
         
         // calculate the available spawn points for each of the planes based on
         // the player position (left, right, top, down)
-        _enemySpawnPositions[0] = new Vector3(playerX - enemySpawnOffset, playerY, 9); // update left position
-        _enemySpawnPositions[1] = new Vector3(playerX, playerY + enemySpawnOffset, 9); // update top position
-        _enemySpawnPositions[2] = new Vector3(playerX + enemySpawnOffset, playerY, 9); // update right position
-        _enemySpawnPositions[3] = new Vector3(playerX, playerY - enemySpawnOffset, 9); // update bottom position
+        _enemySpawnPositions[0] = new Vector3(playerX - enemySpawnOffset, playerY, 0); // update left position
+        _enemySpawnPositions[1] = new Vector3(playerX, playerY + enemySpawnOffset, 0); // update top position
+        _enemySpawnPositions[2] = new Vector3(playerX + enemySpawnOffset, playerY, 0); // update right position
+        _enemySpawnPositions[3] = new Vector3(playerX, playerY - enemySpawnOffset, 0); // update bottom position
     }
     
     public IEnumerator StartSpawningEnemy()
@@ -101,7 +101,14 @@ public class EnemyManager : Singleton<EnemyManager>
         // if the plane is positioned to low then only enable spawning on (top,left,right)
         if (_playerPosition.y < 35)
         {
-            index = Random.Range(0, 2);
+            if (Random.value < 0.5f)
+            {
+                index = 0; // left
+            }
+            else
+            {
+                index = 2; // right 
+            }
             plane.transform.position = _enemySpawnPositions[index];
         }
         else
@@ -137,6 +144,7 @@ public class EnemyManager : Singleton<EnemyManager>
         _enemiesDestroyed++;
         UIManager.instance.enemyUI.DecreaseEnemyAmount(1);
         GameManager.instance.UpdateScore(100);
+        GameManager.instance.UpdateEnemiesDestroyed(1);
 
         if (_enemiesDestroyed <= currentDifficulty.maxEnemiesToSpawn)
         {
@@ -154,8 +162,8 @@ public class EnemyManager : Singleton<EnemyManager>
             }
             else
             {
-                LevelManager.instance.SpawnNextLevel();
-                resetWaves();
+                
+                StartCoroutine(resetWaves());
             }
         }
     }
@@ -169,15 +177,16 @@ public class EnemyManager : Singleton<EnemyManager>
         UIManager.instance.enemyUI.SetEnemyAmount(totalEnemies);
         UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
     }
-    private void resetWaves()
+    private IEnumerator resetWaves()
     {
+        UIManager.instance.notificationUI.SetNotification("NEW ROUND", 2.0f);
+        
+        yield return new WaitForSeconds(5.0f);
+        
+        LevelManager.instance.SpawnNextLevel();
+        UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
         _enemiesSpawned = 0;
         _enemiesDestroyed = 0;
         _currentEnemyWave = 0;
-        
-        UIManager.instance.waveUI.UpdateLevel(_currentEnemyWave, currentDifficulty.levelIndex);
-        UIManager.instance.notificationUI.SetNotification("NEW ROUND", 2.0f);
-        //update wave stuff here.
-        //level index
     }
 }

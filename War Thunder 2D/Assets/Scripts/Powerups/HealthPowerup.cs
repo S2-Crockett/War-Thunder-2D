@@ -14,7 +14,9 @@ public class HealthPowerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            SoundManager.instance.PlayEffectOneShot(powerupClip);
             EventManager.instance.UpdatePlayerHealth(1);
+            UIManager.instance.powerNoticationUI.SetNotification("HEALTH COLLECTED", 2.0f);
             Destroy(gameObject);
         }
     }

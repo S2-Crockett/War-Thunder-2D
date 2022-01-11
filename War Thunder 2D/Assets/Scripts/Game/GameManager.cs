@@ -36,13 +36,23 @@ public class GameManager : Singleton<GameManager>
             case GameState.Playing:
                 break;
             case GameState.Lose:
+                if (Input.GetButtonDown("Submit"))
+                {
+                    UpdateGameState(GameState.Menu);
+                }
                 break;
         }
     }
 
     public void UpdateScore(int amount)
     {
+        playerScore += amount;
         UIManager.instance.scoreUI.UpdateScore(amount);
+    }
+
+    public void UpdateEnemiesDestroyed(int amount)
+    {
+        enemysDestroyed += amount;
     }
 
     public void UpdateGameState(GameState newState)
@@ -66,7 +76,16 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleMenuState()
     {
-        //allow input to select game type
+        UIManager.instance.EnableLoseHUD(false);
+        UIManager.instance.EnableMenuHUD(true);
+        
+        // set the intial player position
+        playerController.transform.position = new Vector3(0,20.0f,0);
+        playerController.transform.rotation = Quaternion.Euler(0, 0, -90.0f);
+        
+        // set player health - reset everything back to default??
+        // reset waves in enemy manager and level manager level back to 0
+        // reset all of the ui back to its default variables
     }
     
     private void HandlePlayingState()
@@ -82,7 +101,15 @@ public class GameManager : Singleton<GameManager>
 
     private void HandleLoseState()
     {
-        //shows stats, enter loops back to menu state
+        _playerMovement._currentGameState = GameState.Lose;
+        EnemyManager.instance.currentGameState = GameState.Lose;
+        
+        UIManager.instance.EnableGameHUD(false);
+        
+        //lose hud needs an animation 2 seconds, just to witness player explosion
+        
+        UIManager.instance.EnableLoseHUD(true);
+        //display the hud details (player score & enemies destroyed)
     }
 }
 

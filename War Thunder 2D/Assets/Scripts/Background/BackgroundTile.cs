@@ -161,15 +161,13 @@ public class BackgroundTile : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Player Entered");
+            collision.gameObject.GetComponent<PlayerHealth>().Die();
         }
         else if(collision.tag == "Enemy")
         {
             collision.gameObject.GetComponent<EnemyHealth>().UpdateHealth(-1);
         }
     }
-
-    
 
     private void SpawnTrees()
     {

@@ -65,8 +65,10 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetButtonDown("Submit"))
             {
+                SoundManager.instance.PlayPlayerOneShot(shootingAudio);
                 GameObject bullets = Instantiate(bullet);
-                bullets.AddComponent<PlayerBullet>().player = gameObject;
+                bullets.AddComponent<PlayerBullet>().owner = gameObject;
+                bullets.AddComponent<PlayerBullet>().direction = transform.up;
             }
         }
     }

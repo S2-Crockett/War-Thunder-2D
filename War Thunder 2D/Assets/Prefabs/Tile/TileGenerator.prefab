@@ -46,21 +46,20 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTransform: {fileID: 0}
   baseTile: {fileID: 7843685602907733474, guid: 349020a316e4dea48a3402dd24056de9, type: 3}
-  spawner: {fileID: 0}
   tileRenderRange: 2
   tileTypes:
   - tileName: Dirt
     layer: 0
-    sprite: {fileID: 21300000, guid: 1647d3fab2198154fba10669108c6d33, type: 3}
+    sprite: {fileID: 21300000, guid: d21cf9b4b8193254e94a713c7497d906, type: 3}
   - tileName: Ground
     layer: 1
-    sprite: {fileID: 21300000, guid: b5ae87977b4e40842ae318aeb955851a, type: 3}
+    sprite: {fileID: 21300000, guid: ad58f346f3f4e35418557a9723d2578c, type: 3}
   - tileName: Sky
     layer: 2
-    sprite: {fileID: 21300000, guid: b618d8500a80d8e49a68853befddb42f, type: 3}
+    sprite: {fileID: 21300000, guid: 211f2c05b75fd5246b1e78eb4c027523, type: 3}
   - tileName: Transition
     layer: 3
-    sprite: {fileID: 21300000, guid: 534824e6944a7714581ab096df694998, type: 3}
+    sprite: {fileID: 21300000, guid: 2414a8c97bab7a34094523aa0fde9a9b, type: 3}
   - tileName: Space
     layer: 4
-    sprite: {fileID: 21300000, guid: 746ed10daa5aa3b49814f0816b0e4e53, type: 3}
+    sprite: {fileID: 21300000, guid: 66b709c12c94e1d4ea6f1745ac8d1a97, type: 3}

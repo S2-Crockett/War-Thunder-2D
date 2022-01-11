@@ -10,9 +10,12 @@ public class UINotifcation : MonoBehaviour
 
     public void SetNotification(string text, float displayTime)
     {
-        gameObject.SetActive(true);
-        notificationText.text = text;
-        StartCoroutine(DisplayNotification(displayTime));
+        if (isActiveAndEnabled)
+        {
+            gameObject.SetActive(true);
+            notificationText.text = text;
+            StartCoroutine(DisplayNotification(displayTime));
+        }
     }
     
     IEnumerator DisplayNotification(float time)
