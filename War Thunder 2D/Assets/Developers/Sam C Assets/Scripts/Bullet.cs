@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
     private Transform playerTran;
 
     private SpriteRenderer spriterenderer;
-    public Sprite sprite;
+    public GameObject Explosion;
     private float SpriteTimer = 1.0f;
     public bool powerUpActive = false;
     
@@ -71,6 +71,7 @@ public class Bullet : MonoBehaviour
         }
         
     }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -109,8 +110,11 @@ public class Bullet : MonoBehaviour
             if (collision.gameObject.tag == "Player" &&
                 (player.gameObject.tag == "Enemy" || player.gameObject.tag == "EnemyBomber"))
             {
+                GameObject explosion = Instantiate(Explosion);
+                explosion.transform.position = transform.position;
                 Destroy(gameObject);
                 collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1f);
+                collision.gameObject.GetComponent<AudioSource>().Play(0);
             }
         }
       
