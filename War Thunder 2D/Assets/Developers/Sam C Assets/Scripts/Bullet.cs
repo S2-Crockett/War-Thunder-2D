@@ -23,7 +23,8 @@ public class Bullet : MonoBehaviour
     private SpriteRenderer spriterenderer;
     public Sprite sprite;
     private float SpriteTimer = 1.0f;
-
+    public bool powerUpActive = false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +69,7 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -79,13 +81,27 @@ public class Bullet : MonoBehaviour
             {
                 if (collision.gameObject.tag == "Enemy")
                 {
-                    collision.gameObject.GetComponent<Enemy>().MyOwnDestroy();
+                    if (powerUpActive)
+                    {
+                        collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(3f);
+                    }
+                    else
+                    {
+                        collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1f);
+                    }
                     spawner.EnemyDestroyed();
                 }
 
                 if (collision.gameObject.tag == "EnemyBomber")
                 {
-                    collision.gameObject.GetComponent<EnemyBomber>().MyOwnDestroy();
+                    if (powerUpActive)
+                    {
+                        collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(3f);
+                    }
+                    else
+                    {
+                        collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1f);
+                    }
                 }
                 Destroy(gameObject);
             }

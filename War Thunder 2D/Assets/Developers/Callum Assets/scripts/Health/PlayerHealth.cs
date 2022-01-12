@@ -8,12 +8,11 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float startingHealth;
-    public Transform spawnpoint;
     public PlayableDirector anim;
     public float currentHealth;
     private SpriteRenderer spriteRenderer;
     public Sprite[] Explosions;
-    public float timer = 1f;
+    public float timer = 0.2f;
 
     public bool die = false;
 
@@ -32,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         currentHealth = startingHealth;
         dead = Dead.ONE;
+        anim = GameObject.Find("Director").GetComponent<PlayableDirector>();
     }
 
     private void Update()
@@ -70,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    timer = 0.5f;
+                    timer = 0.2f;
                     dead = Dead.TWO;
                 }
                 break;
@@ -81,7 +81,7 @@ public class PlayerHealth : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    timer = 0.5f;
+                    timer = 0.2f;
                     dead = Dead.THREE;
                 }
                 break;
@@ -92,7 +92,7 @@ public class PlayerHealth : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    timer = 0.5f;
+                    timer = 0.2f;
                     dead = Dead.FOUR;
                 }
                 break;
@@ -103,14 +103,21 @@ public class PlayerHealth : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer <= 0)
                 {
-                    timer = 0.5f;
+                    timer = 0.2f;
                     dead = Dead.DEAD;
                 }
                 break;
             }
             case Dead.DEAD:
             {
-                SceneManager.LoadScene("LoseScene");
+                if (tag == "Player")
+                {
+                    SceneManager.LoadScene("LoseScene");
+                }
+                else
+                {
+                    GetComponent<EnemyBomber>().MyOwnDestroy();
+                }
                 break;
             }
         }

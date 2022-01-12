@@ -34,20 +34,48 @@ public class EnemyBomber : MonoBehaviour
     private int direction_;
     private float bomberTimer = 1.0f;
 
+    private bool dead = false;
+    private float timer = 0.2f;
+    private float timer2 = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        spawningDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
-        spawningDirection();
+
         BomberFire();
 
+        dead = GetComponent<PlayerHealth>().die;
+        if (!dead)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                rb.velocity = transform.up * 0;
+                timer2 -= Time.deltaTime;
+                if (timer2 <= 0)
+                {
+                    timer = 0.02f;
+                    timer2 = 0.02f;
+                }
+            }
+            else
+            {
+                rb.velocity = (transform.up * speed);
+            }
+        }
+        else
+        {
+            rb.velocity = transform.up * 0;
+        }
     }
     
     
@@ -106,6 +134,7 @@ public class EnemyBomber : MonoBehaviour
         rb.velocity = transform.forward * speed;
     }
 
+    
     private void shoot()
     {
         if (transform.position.y < cam.transform.position.y + 10 && 
@@ -131,20 +160,23 @@ public class EnemyBomber : MonoBehaviour
 
     private void BomberFire()
     {
-        bomberTimer -= 1.0f * Time.deltaTime;
-        if (bomberTimer <= 0)
+        if (!dead)
         {
-            shoot();
-            bomberTimer = 1.0f;
+            bomberTimer -= 1.0f * Time.deltaTime;
+            if (bomberTimer <= 0)
+            {
+                shoot();
+                bomberTimer = 1.0f;
+            }
         }
     }
 
     public void MyOwnDestroy()
     {
         audioSource.PlayOneShot(destroyAudio, 0.5f);
-        GameObject boom = Instantiate(destructionPrefab);
-        spawner.AddBomberScore();
-        boom.transform.position = transform.position;
+        //GameObject boom = Instantiate(destructionPrefab);
+        //spawner.AddBomberScore();
+        //boom.transform.position = transform.position;
         Destroy(gameObject);
     }
 }

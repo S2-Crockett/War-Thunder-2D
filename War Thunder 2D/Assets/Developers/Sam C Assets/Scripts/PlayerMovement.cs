@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
         dead = GetComponent<PlayerHealth>().die;
         if (!dead)
         {
-            //timer -= Time.deltaTime;
+            timer -= Time.deltaTime;
             if (timer <= 0)
             {
                 rb.velocity = transform.up * 0;

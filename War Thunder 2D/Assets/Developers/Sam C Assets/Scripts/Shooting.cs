@@ -13,6 +13,10 @@ public class Shooting : MonoBehaviour
     public AudioClip shootingAudio;
     private AudioSource audioSource;
 
+    private bool dead = false;
+    public bool powerUpActive = false;
+    private float powerUpTimer = 3.0f;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,10 +26,23 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Submit"))
+        dead = GetComponent<PlayerHealth>().die;
+        if (!dead)
         {
-            PlayerShoot();
-            audioSource.PlayOneShot(shootingAudio, 0.5f);
+            if (Input.GetButtonDown("Submit"))
+            {
+                PlayerShoot();
+                audioSource.PlayOneShot(shootingAudio, 0.5f);
+            }
+        }
+
+        if (powerUpActive)
+        {
+            powerUpTimer -= Time.deltaTime;
+            if (powerUpTimer <= 0)
+            {
+                powerUpActive = false;
+            }
         }
     }
 
@@ -35,5 +52,13 @@ public class Shooting : MonoBehaviour
         bullets.GetComponent<Bullet>().offset = 0;
         bullets.GetComponent<Bullet>().player = player;
         bullets.GetComponent<Bullet>().cam = cam;
+        if (powerUpActive)
+        {
+            bullets.GetComponent<Bullet>().powerUpActive = true;
+        }
+        else
+        {
+            bullets.GetComponent<Bullet>().powerUpActive = false;
+        }
     }
 }
