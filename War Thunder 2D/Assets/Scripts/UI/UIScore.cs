@@ -30,6 +30,11 @@ public class UIScore : MonoBehaviour
         }
     }
 
+    public void SetScore(int defaultAmount)
+    {
+        scoreText.text = "00000" + defaultAmount;
+    }
+
     private void CalculateScore(int amount)
     {
         if (_scoreAmount > 1000)

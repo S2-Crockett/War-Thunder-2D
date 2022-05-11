@@ -19,6 +19,8 @@ public class EnemyManager : Singleton<EnemyManager>
     [NonSerialized] public LevelDifficulty currentDifficulty;
     [NonSerialized] public GameState currentGameState;
     
+    private List<GameObject> m_enemyContainer = new List<GameObject>();
+    
     private Vector2[] _enemySpawnPositions = new[]
     {
         new Vector2(0f, 0f), //left
@@ -39,13 +41,7 @@ public class EnemyManager : Singleton<EnemyManager>
     private int _enemiesDestroyed;
     private int _currentEnemyWave;
     private Vector3 _playerPosition;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -84,6 +80,24 @@ public class EnemyManager : Singleton<EnemyManager>
         }
     }
 
+    public void ResetToDefaults()
+    {
+        _enemiesSpawned = 0;
+        _enemiesDestroyed = 0;
+        _currentEnemyWave = 0;
+
+        for (int i = 0; i < m_enemyContainer.Count; i++)
+        {
+            if (m_enemyContainer[i] != null)
+            {
+                Destroy(m_enemyContainer[i]);
+            }
+        }
+
+        m_enemyContainer = new List<GameObject>();
+        StopAllCoroutines();
+    }
+
     public void StartSpawningSpecialEnemies()
     {
         
@@ -93,6 +107,7 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         // spawn a plane and set all the default components in the enemy class
         GameObject plane = Instantiate(baseEnemy) as GameObject;
+        m_enemyContainer.Add(plane);
         
         // calculate a random position for the enemy to spawn
         int index = Random.Range(0, _enemySpawnPositions.Length);

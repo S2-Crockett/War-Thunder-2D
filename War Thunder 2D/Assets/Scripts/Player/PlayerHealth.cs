@@ -15,6 +15,12 @@ public class PlayerHealth : MonoBehaviour
     {
         UIManager.instance.healthUI.UpdateHealth(health);
     }
+
+    public void SetPlayerHealth(int defaultAmount)
+    {
+        health = defaultAmount;
+        UIManager.instance.healthUI.UpdateHealth(health);
+    }
     
     public void UpdateHealth(int amount)
     {
@@ -48,6 +54,4 @@ public class PlayerHealth : MonoBehaviour
         yield return new WaitForSeconds(time);
         _damageTaken = false;
     }
-
-
 }

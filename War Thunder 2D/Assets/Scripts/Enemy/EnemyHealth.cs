@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
     public void Die()
     {
         _dead = true;
+        
         EnemyManager.instance.EnemyDestroyed();
         GameObject boom = Instantiate(destroyPrefab);
         boom.transform.position = transform.position;

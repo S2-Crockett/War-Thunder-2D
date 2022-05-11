@@ -21,6 +21,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         //set the first index 
         EnemyManager.instance.setLevelDifficulty(difficulties[0]);
+        EnemyManager.instance.ResetToDefaults();
         
         //set class variables
         currentLevelIndex = 0;

@@ -13,6 +13,7 @@ public class UIGameOver : MonoBehaviour
     public GameObject panel;
     public Text scoreText;
     public Text enemiesText;
+    public UITextFlash flash;
 
     private void OnEnable()
     {
@@ -30,5 +31,6 @@ public class UIGameOver : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         panel.SetActive(true);
+        flash.StartFlash();
     }
 }

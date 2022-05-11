@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_War Thunder 2D.1765547715.00" t="ExcludeRecursive" />
-    <e p="D:\University Files\3rd Year\CGD\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
+    <e p="C:\Users\Sam Stamp\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_War Thunder 2D.-1986209954.00" t="ExcludeRecursive" />
+    <e p="D:\University Files\3rd Year\CGD\Task-1\War-Thunder-2D\War Thunder 2D" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Developers" t="Include">
@@ -82,6 +82,7 @@
           </e>
         </e>
         <e p="UIGameOver.cs" t="Include" />
+        <e p="UITextFlash.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />

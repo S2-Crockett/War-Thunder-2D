@@ -11,5 +11,5 @@ public class EventManager : Singleton<EventManager>
     {
         playerHealth.UpdateHealth(amount);
     }
-    
+
 }

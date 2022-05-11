@@ -50,6 +50,12 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.scoreUI.UpdateScore(amount);
     }
 
+    public void SetScore(int amount)
+    {
+        playerScore = amount;
+        UIManager.instance.scoreUI.SetScore(playerScore);
+    }
+
     public void UpdateEnemiesDestroyed(int amount)
     {
         enemysDestroyed += amount;
@@ -83,6 +89,8 @@ public class GameManager : Singleton<GameManager>
         playerController.transform.position = new Vector3(0,20.0f,0);
         playerController.transform.rotation = Quaternion.Euler(0, 0, -90.0f);
         
+        
+        
         // set player health - reset everything back to default??
         // reset waves in enemy manager and level manager level back to 0
         // reset all of the ui back to its default variables
@@ -95,8 +103,11 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.EnableGameHUD(true);
         
         EnemyManager.instance.currentGameState = GameState.Playing;
+        EventManager.instance.playerHealth.SetPlayerHealth(5);
+        LevelManager.instance.SetInitialLevel();
+        SetScore(0);
+        
         StartCoroutine(EnemyManager.instance.StartSpawningEnemy());
-        //update score.. 
     }
 
     private void HandleLoseState()
