@@ -11,7 +11,7 @@ public class UITextFlash : MonoBehaviour
     // Start is called before the first frame update
 
     private bool isFlashing = false;
-    
+
     void Start()
     {
         m_text.enabled = true;
@@ -19,6 +19,13 @@ public class UITextFlash : MonoBehaviour
         {
             StartFlash();
         }
+    }
+
+    public void StopFlash()
+    {
+        CancelInvoke();
+        isFlashing = false;
+        m_text.enabled = false;
     }
 
     public void StartFlash()

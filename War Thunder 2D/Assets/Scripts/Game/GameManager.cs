@@ -32,6 +32,12 @@ public class GameManager : Singleton<GameManager>
                 {
                     UpdateGameState(GameState.Playing);
                 }
+                
+                if (_playerMovement)
+                {
+                    _playerMovement.ResetPlayerMovement();
+                }
+                
                 break;
             case GameState.Playing:
                 break;
@@ -39,6 +45,7 @@ public class GameManager : Singleton<GameManager>
                 if (Input.GetButtonDown("Submit"))
                 {
                     UpdateGameState(GameState.Menu);
+                    
                 }
                 break;
         }
@@ -85,12 +92,13 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.EnableLoseHUD(false);
         UIManager.instance.EnableMenuHUD(true);
         
+        SetScore(0);
+        EventManager.instance.playerHealth.SetPlayerHealth(5);
+      
         // set the intial player position
         playerController.transform.position = new Vector3(0,20.0f,0);
         playerController.transform.rotation = Quaternion.Euler(0, 0, -90.0f);
-        
-        
-        
+
         // set player health - reset everything back to default??
         // reset waves in enemy manager and level manager level back to 0
         // reset all of the ui back to its default variables
@@ -103,15 +111,15 @@ public class GameManager : Singleton<GameManager>
         UIManager.instance.EnableGameHUD(true);
         
         EnemyManager.instance.currentGameState = GameState.Playing;
-        EventManager.instance.playerHealth.SetPlayerHealth(5);
-        LevelManager.instance.SetInitialLevel();
-        SetScore(0);
         
         StartCoroutine(EnemyManager.instance.StartSpawningEnemy());
     }
 
     private void HandleLoseState()
     {
+        EventManager.instance.playerHealth.SetPlayerHealth(5);
+        LevelManager.instance.SetInitialLevel();
+        
         _playerMovement._currentGameState = GameState.Lose;
         EnemyManager.instance.currentGameState = GameState.Lose;
         

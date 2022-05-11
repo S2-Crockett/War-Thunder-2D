@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 2038220995171172397}
   - component: {fileID: 2038220995171172396}
   - component: {fileID: 560118315295308455}
-  - component: {fileID: 3317802678614049866}
   - component: {fileID: 1317731257358089407}
   - component: {fileID: 2632737955678119461}
   - component: {fileID: -7832387277345690166}
   - component: {fileID: -1388523418035178175}
+  - component: {fileID: 1718816008109547156}
+  - component: {fileID: 373796215057473248}
   m_Layer: 2
   m_Name: Enemy Bomber
   m_TagString: EnemyBomber
@@ -84,26 +85,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.08, y: 7.23}
   m_EdgeRadius: 0
---- !u!114 &3317802678614049866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038220995171172398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b21bf2411dcbd8d47a65e0ef18740069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6.5
-  enemyRange: 15
-  viewDistance: 10
-  shootDelay: 0.5
-  bullets: {fileID: 6459148832310660044, guid: 8f3ab088d83229f4b946c7d87cc32c62, type: 3}
-  shootingAudio: {fileID: 8300000, guid: 5ff95e75f9bf9d742b6adc3d2d27873a, type: 3}
-  destroyAudio: {fileID: 8300000, guid: 045100a5915929a498ebca362276622d, type: 3}
-  destructionPrefab: {fileID: 8054830953899479832, guid: 18f1234a4c91a6e4bbed39ae0b0cf575, type: 3}
 --- !u!212 &1317731257358089407
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -371,3 +352,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1718816008109547156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038220995171172398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a13d70a2a16fbf248914d772e4f50a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6.5
+  enemyRange: 15
+  viewDistance: 4.3
+  shootDelay: 0.5
+  bullets: {fileID: 6459148832310660044, guid: e4715c4c3174acb47a1403e2b41367bf, type: 3}
+  shootingAudio: {fileID: 0}
+  destroyAudio: {fileID: 0}
+  destructionPrefab: {fileID: 0}
+--- !u!114 &373796215057473248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038220995171172398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccff945e5a523d34d904e9abc338598b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  destroyPrefab: {fileID: 0}

@@ -13,6 +13,7 @@ public class UIGameOver : MonoBehaviour
     public GameObject panel;
     public Text scoreText;
     public Text enemiesText;
+    public GameObject flashContainer;
     public UITextFlash flash;
 
     private void OnEnable()
@@ -24,13 +25,16 @@ public class UIGameOver : MonoBehaviour
 
     private void OnDisable()
     {
+        flash.StopFlash();
         panel.SetActive(false);
+        flashContainer.SetActive(false);
     }
 
     private IEnumerator DelayEnable(float time)
     {
         yield return new WaitForSeconds(time);
         panel.SetActive(true);
+        flashContainer.SetActive(true);
         flash.StartFlash();
     }
 }

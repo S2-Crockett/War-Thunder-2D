@@ -25,6 +25,7 @@
           <e p="Sam C Assets" t="Include">
             <e p="Scripts" t="Include">
               <e p="CameraMovement.cs" t="Include" />
+              <e p="EnemyBomber.cs" t="Include" />
               <e p="PlayerMovement.cs" t="Include" />
               <e p="Shooting.cs" t="Include" />
             </e>
@@ -45,7 +46,6 @@
           </e>
           <e p="Enemy" t="Include">
             <e p="Enemy.cs" t="Include" />
-            <e p="EnemyBomber.cs" t="Include" />
             <e p="EnemyHealth.cs" t="Include" />
             <e p="EnemyManager.cs" t="Include" />
           </e>

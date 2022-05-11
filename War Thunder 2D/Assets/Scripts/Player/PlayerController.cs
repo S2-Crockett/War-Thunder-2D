@@ -35,15 +35,28 @@ public class PlayerController : MonoBehaviour
         
         //set the initial transform rotation to be flying right across the screen.
         transform.rotation = Quaternion.Euler(0, 0, -90.0f);
-        
+    }
+
+    public void ResetPlayerMovement()
+    {
+        _rigidbody.velocity = transform.up * speed;
+        transform.rotation = Quaternion.Euler(0, 0, -90.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        CalculatePlayerMovement();
-        UpdateSpriteRotation();
-        HandleShooting();
+        if (_currentGameState != GameState.Lose)
+        {
+            CalculatePlayerMovement();
+            UpdateSpriteRotation();
+            HandleShooting();
+        }
+        else
+        {
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.angularVelocity = 0.0f;
+        }
     }
 
     private void CalculatePlayerMovement()
@@ -75,7 +88,6 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateSpriteRotation()
     {
-        
         _angle = transform.eulerAngles.z;
         CheckRotationAngle(Rotation.NORTH, 337.5, 22.5);
         CheckRotationAngle(Rotation.NORTH_WEST, 67.5, 22.5);

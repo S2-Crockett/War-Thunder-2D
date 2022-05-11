@@ -20,20 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="caf43830-f505-46bc-953e-495773d67e4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion1.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion3.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Sprites/ExplosionSprites/Explosion4.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.War Thunder 2D/riderModule.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Levels/Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Levels/Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy Bomber.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemies/Enemy Bomber.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBomber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyBomber.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIScore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIScore.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UIGameOver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UIGameOver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UITextFlash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UITextFlash.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,13 +59,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Core/Ensure/EnsureThat.Objects.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UITextFlash.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UIGameOver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UITextFlash.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Background/TileGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,7 +73,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Sounds/UISounds.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/Singleton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/ScoreScript.cs" />
@@ -67,7 +81,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemySpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/Doublepoints.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Bullet.cs" />
-        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/Shooting.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/SpriteChange.cs" />
         <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerBullet.cs" />
@@ -81,27 +94,32 @@
         <option value="$PROJECT_DIR$/Assets/Developers/Callum Assets/scripts/Health/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIPowerNotifcation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIPowerCooldown.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/CoinPowerup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/DoublePointsPowerup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Powerups/HealthPowerup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Sounds/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Background/BackgroundTile.cs" />
-        <option value="$PROJECT_DIR$/Assets/UITextFlash.cs" />
-        <option value="$PROJECT_DIR$/Assets/UIGameOver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Game/EventManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIScore.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UINotifcation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Level/LevelManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyHealth.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Bullets/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/EnemyBomber.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" />
+        <option value="$PROJECT_DIR$/Assets/Developers/Sam C Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/UITextFlash.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/UIGameOver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Game/GameManager.cs" />
       </list>
     </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="1zgY0t7ww5A6nOI6MdWgAApDNfM" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -114,6 +132,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="rider.run.widget.enabled.cache" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -171,6 +190,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,24 +209,9 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1445" y="270" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1641826626634">
-      <screen x="0" y="0" width="2293" height="929" />
+    <state x="93" y="93" width="2566" height="936" key="VCS.FileHistoryDialog" timestamp="1652288369182">
+      <screen x="0" y="0" width="2752" height="1122" />
     </state>
-    <state x="1445" y="270" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2293.929@0.0.2293.929" timestamp="1641826626634" />
-    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog" timestamp="1641841472172">
-      <screen x="0" y="0" width="2293" height="929" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="VCS.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1635599974614" />
-    <state x="139" y="105" width="2016" height="720" key="VCS.FileHistoryDialog/0.0.2293.929@0.0.2293.929" timestamp="1641841472172" />
-    <state x="634" y="211" key="run.anything.popup" timestamp="1641911891515">
-      <screen x="0" y="0" width="2293" height="929" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1634650896100" />
-    <state x="634" y="211" key="run.anything.popup/0.0.2293.929@0.0.2293.929" timestamp="1641911891515" />
-    <state x="643" y="163" width="1004" height="765" key="search.everywhere.popup" timestamp="1641900437430">
-      <screen x="0" y="0" width="2293" height="929" />
-    </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1635889270943" />
-    <state x="643" y="163" width="1004" height="765" key="search.everywhere.popup/0.0.2293.929@0.0.2293.929" timestamp="1641900437430" />
+    <state x="93" y="93" width="2566" height="936" key="VCS.FileHistoryDialog/0.0.2752.1122@0.0.2752.1122" timestamp="1652288369182" />
   </component>
 </project>

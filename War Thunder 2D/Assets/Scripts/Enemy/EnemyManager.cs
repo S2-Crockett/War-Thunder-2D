@@ -95,7 +95,6 @@ public class EnemyManager : Singleton<EnemyManager>
         }
 
         m_enemyContainer = new List<GameObject>();
-        StopAllCoroutines();
     }
 
     public void StartSpawningSpecialEnemies()

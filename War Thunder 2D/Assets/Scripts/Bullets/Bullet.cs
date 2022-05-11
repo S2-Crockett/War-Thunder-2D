@@ -21,6 +21,7 @@ public class Bullet : MonoBehaviour
     
     [System.NonSerialized] public GameObject owner;
     [System.NonSerialized] public Vector3 direction;
+    [System.NonSerialized] public float offset = 0;
     
     public void Start()
     {
@@ -28,7 +29,7 @@ public class Bullet : MonoBehaviour
         {
             _onwerTransform = owner.transform;
             var rotation = _onwerTransform.rotation;
-            transform.rotation = new Quaternion(rotation.x, rotation.y, rotation.z + 0, rotation.w);
+            transform.rotation = new Quaternion(rotation.x, rotation.y, rotation.z + offset, rotation.w);
             transform.position = owner.transform.position;
         }
 

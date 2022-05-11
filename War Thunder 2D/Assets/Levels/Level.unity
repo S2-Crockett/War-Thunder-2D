@@ -2675,7 +2675,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5055945e95284614fa60e594c62c56ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 0
+  explosions:
+  - {fileID: 21300000, guid: 25b267de20d22c342b6ae0b7115e15ba, type: 3}
+  - {fileID: 21300000, guid: e95f951916075eb4ea3d8d7759d7404c, type: 3}
+  - {fileID: 21300000, guid: c140061f84866f840a86a1eaca7f6ab3, type: 3}
+  - {fileID: 21300000, guid: 70808e3fe7ca5f842bb9bcfa3dce4640, type: 3}
+  timer: 1
+  dead: 0
 --- !u!1 &1430745490
 GameObject:
   m_ObjectHideFlags: 0
@@ -2953,7 +2960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1486815891
 Transform:
   m_ObjectHideFlags: 0
@@ -3931,6 +3938,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 89d431c3b28dc0f469e88e9615a489e0, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: f8540fa1f005a194c9d1babb37a67471, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: fa2e44a83bd1bec40a54e81407f2515f, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: f8540fa1f005a194c9d1babb37a67471, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 89d431c3b28dc0f469e88e9615a489e0, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 318016f27d65b494ba753f81784b7b72, type: 3}
+    - target: {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
+      propertyPath: spriteArray.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c6901c7b3623984faf6b5b2fa9b64b2, type: 3}
     m_RemovedComponents:
     - {fileID: 6179133997032937172, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 092808ac55f5d2744ad0768b2ceaf041, type: 3}

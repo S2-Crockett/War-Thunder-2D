@@ -143,10 +143,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2870219547828244459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efb04a10c2d0b184f815b8253a0b535b, type: 3}
+  m_Script: {fileID: 11500000, guid: ce5dc839588f4444ea2b293c970933bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  rotation: 0
+  transform_: {fileID: 2870219547828244449}
+  spriteArray: []
 --- !u!114 &1545149747681109485
 MonoBehaviour:
   m_ObjectHideFlags: 0

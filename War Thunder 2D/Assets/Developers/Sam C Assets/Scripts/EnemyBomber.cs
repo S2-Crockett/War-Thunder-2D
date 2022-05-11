@@ -36,6 +36,7 @@ public class EnemyBomber : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         cam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
@@ -44,6 +45,7 @@ public class EnemyBomber : MonoBehaviour
     {
         spawningDirection();
         BomberFire();
+
     }
     
     
@@ -104,19 +106,26 @@ public class EnemyBomber : MonoBehaviour
 
     private void shoot()
     {
-        /*
-        if (direction_ == 1)
+        if (transform.position.y < cam.transform.position.y + 10 && 
+            transform.position.y > cam.transform.position.y - 2)
         {
-            GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().offset = 90;
+            audioSource.PlayOneShot(shootingAudio, 0.5f);
+            if (direction_ == 1)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullet.GetComponent<EnemyBullet>().offset = 90;
+                bullets.AddComponent<EnemyBullet>().owner = gameObject;
+                bullets.AddComponent<EnemyBullet>().direction = transform.up;
+            }
+
+            if (direction_ == 2)
+            {
+                GameObject bullet = Instantiate(bullets);
+                bullet.GetComponent<EnemyBullet>().offset = -90;
+                bullets.AddComponent<EnemyBullet>().owner = gameObject;
+                bullets.AddComponent<EnemyBullet>().direction = transform.up;
+            }
         }
-        if (direction_ == 2)
-        {
-            GameObject bullet = Instantiate(bullets);
-            bullets.GetComponent<Bullet>().offset = -90;
-        }
-        bullets.GetComponent<Bullet>().player = this.gameObject;
-        */
     }
 
     private void BomberFire()
@@ -128,11 +137,5 @@ public class EnemyBomber : MonoBehaviour
             bomberTimer = 1.0f;
         }
     }
-
-    public void MyOwnDestroy()
-    {
-        GameObject boom = Instantiate(destructionPrefab);
-        boom.transform.position = transform.position;
-        Destroy(gameObject);
-    }
+    
 }
